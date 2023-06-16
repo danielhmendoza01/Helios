@@ -3,6 +3,7 @@
 #include "boyer.h"
 
 int main() {
+    unordered_set<std::string> identifierLines;
     // Variables for chunking
     char rawBuffer[2000];
     string buffer;
@@ -44,6 +45,12 @@ int main() {
             string lineData = buffer.substr(0, pos);
             lines[lineIndex].insert(lines[lineIndex].end(), lineData.begin(), lineData.end());
             buffer.erase(0, pos + 1);
+            /*********/
+            if (lineIndex == 0){
+                string line(lines[0].begin(), lines[0].end());
+                checkDuplicates(identifierLines, line, logFile);
+            }
+            /*********/
             //At lineIndex 3 the ASCII line occurs 
             if (lineIndex == 3) {
                 //boyer

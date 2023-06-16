@@ -93,10 +93,8 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, gzFi
         if (lastPIndex < 0)
         {
             positions.push_back(shiftIndex);
-            if (shiftIndex + patternSize < lineSize)
-                shiftIndex += patternSize - badchar[line[shiftIndex + patternSize]];
-            else
-                shiftIndex += 1;
+            shiftIndex += patternSize;
+            
         }
         else
             shiftIndex += max(shift[lastPIndex + 1], lastPIndex - badchar[line[shiftIndex + lastPIndex]]);
@@ -111,20 +109,6 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, gzFi
             for (int j = 0; j < pattern.size(); j++) {
                 if (pattern[j] != subLine[j]) {                    
                     gzWriteStringToGzFile(logFile, "****ADAPTER ERROR*****\n");
-                    gzclose(logFile);
-                    for(int n = 0; n < subLine.size(); n++){
-                        cout << subLine[n] << " ";
-                    }
-                    cout<<endl;
-                    cout << "ADAPTER ERROR: " << positions[i] <<endl;
-                    for(int m = 0; m<line.size(); m++){
-                        if (m == positions[i]){
-                            cout << "[";
-                        }
-                        cout << line[m] << " ";
-                    }
-                    cout << endl;
-                    exit(0);
                 }
             }
             line.erase(line.begin() + positions[i], line.begin() + positions[i] + patternSize);

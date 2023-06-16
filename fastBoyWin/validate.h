@@ -19,3 +19,13 @@ void gzWriteCut(gzFile file, int data){
     gzWriteIntToGzFile(file, data);
     gzWriteStringToGzFile(file, "\n");
 }
+
+void checkDuplicates(unordered_set<std::string> identifierLines, string line, gzFile file){
+    if (identifierLines.count(line) > 0) {
+            gzWriteStringToGzFile(file, "Duplicate identifier line: " + line);
+            // Handle duplicate identifier line as needed
+    } else {
+        // Add the identifier line to the unordered_set
+        identifierLines.insert(line);
+    }
+}
