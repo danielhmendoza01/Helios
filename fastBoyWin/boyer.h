@@ -5,6 +5,7 @@
 #include <zlib.h>
 #include <cstring>
 #include <vector>
+#include "validate.h"
 using namespace std;
 
 // 256 is needed for array memory based on ASCII char
@@ -70,7 +71,7 @@ void preprocess_strong_suffix(vector<char> pattern, int size, vector<int>& shift
     }
 }
 
-void search(vector<char>& line, vector<char>& pattern, vector<char>& score)
+void search(vector<char>& line, vector<char>& pattern, vector<char>& score, gzFile logFile)
 {
     int lineSize = line.size();
     int patternSize = pattern.size();
@@ -86,13 +87,12 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score)
     while (shiftIndex <= (lineSize - patternSize))
     {
         int lastPIndex = patternSize - 1;
-        while (lastPIndex >= 0 && pattern[lastPIndex] == line[shiftIndex + lastPIndex])
+        while (lastPIndex >= 0 && pattern[lastPIndex] == line[shiftIndex + lastPIndex]){
             lastPIndex--;
-
+        }
         if (lastPIndex < 0)
         {
             positions.push_back(shiftIndex);
-
             if (shiftIndex + patternSize < lineSize)
                 shiftIndex += patternSize - badchar[line[shiftIndex + patternSize]];
             else
@@ -107,6 +107,26 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score)
         for (int i = positions.size()-1; i >= 0; i--)
         {
             //how to erase
+            vector<char> subLine(line.begin() + positions[i], line.begin() + positions[i] + patternSize);
+            for (int j = 0; j < pattern.size(); j++) {
+                if (pattern[j] != subLine[j]) {                    
+                    gzWriteStringToGzFile(logFile, "****ADAPTER ERROR*****\n");
+                    gzclose(logFile);
+                    for(int n = 0; n < subLine.size(); n++){
+                        cout << subLine[n] << " ";
+                    }
+                    cout<<endl;
+                    cout << "ADAPTER ERROR: " << positions[i] <<endl;
+                    for(int m = 0; m<line.size(); m++){
+                        if (m == positions[i]){
+                            cout << "[";
+                        }
+                        cout << line[m] << " ";
+                    }
+                    cout << endl;
+                    exit(0);
+                }
+            }
             line.erase(line.begin() + positions[i], line.begin() + positions[i] + patternSize);
             score.erase(score.begin() + positions[i], score.begin() + positions[i] + patternSize);
         }

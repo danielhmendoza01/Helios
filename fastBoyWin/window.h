@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstring>
 #include <vector>
+#include <zlib.h>
 using namespace std;
 
 //takes the avg of the window and returns the cutoff if condition is met
@@ -47,14 +48,9 @@ void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLi
     int cutOff = windowSlide(numericLine);
     // if the cut off is not -1 it holds the threshold index to cutoff
     if (cutOff != -1 && cutOff >= baseSize){
-        /*
-        
-        */
-       
-       /*
-       */
         // erase the ASCII and Sequence line at the cutoff
         score.erase(score.begin() + cutOff, score.end());
         line.erase(line.begin() + cutOff, line.end());
     }
+    
 }

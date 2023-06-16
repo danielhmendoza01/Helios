@@ -1,10 +1,11 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include <zlib.h>
 using namespace std;
 
 int main() {
-    const char *filename = "/scratch/dmendoza/Helios_Project/fastBoyWin/files/logs/output.fastq.gz";
+    const char *filename = "/scratch/dmendoza/Helios_Project/fastBoyWin/files/logs/log.txt.gz";
 
     gzFile file = gzopen(filename, "r");
     if (file == nullptr) {
@@ -18,7 +19,6 @@ int main() {
         // Process the data in the buffer
         // bytesRead can be used to track the progress
         // Example: Print the buffer
-        
         std::cout.write(buffer, bytesRead);
     }
 
