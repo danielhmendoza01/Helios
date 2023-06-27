@@ -34,7 +34,7 @@ void fileSplit(string inFile, vector<string>& tempFilesPath, vector<string>& tem
     }
 
     int bytesRead;
-    uint64_t bufferSize = (65536); // Size of buffer, 1MB is 1048576
+    uint64_t bufferSize = (1048576*100); // Size of buffer, 1MB is 1048576
     std::vector<char> buffer(bufferSize); // Buffer to read data into
     int tempFileID = 0; // Counter for temporary files
     uint64_t totalBytes = 0;

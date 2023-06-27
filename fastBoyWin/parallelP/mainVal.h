@@ -16,7 +16,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     // Needed variables
     unordered_set<std::string> identifierLines;
     const unsigned long GIGABYTE = 1024 * 1024 * 1024;
-    char rawBuffer[GIGABYTE];
+    char rawBuffer[1048576*100];
     string buffer;
     vector<char> lines[4];
     vector<int> numericLine;
