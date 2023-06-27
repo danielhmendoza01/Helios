@@ -1,14 +1,12 @@
 #include <iostream>
-#include<vector>
 using namespace std;
-int main() {
-    vector<char> line = {'g', 'c', 'a', 'a', 't', 'g', 'c', 'c', 't', 'a','t','g','t','g','a','a'};
-    vector<char> pattern = {'t','a','t','g','t','g'};
-    line.erase(line.begin() + 8, line.begin() + 8 + pattern.size());
-    for(int i; i < line.size(); i++){
-       cout << line[i] << " ";
-    }
-    cout << endl;
-    std::cout << "Hello, World!" << std::endl;
+int main(int argc, char* argv[]) {
+    // Access the file paths as command-line arguments
+    std::string file1 = argv[1];
+    std::string file2 = argv[2];
+    std::string file3 = argv[3];
+
+    // Rest of your C++ code
+    cout << file1 << file2 << file3 << endl;
     return 0;
 }

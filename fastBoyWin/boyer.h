@@ -71,12 +71,14 @@ void preprocess_strong_suffix(vector<char> pattern, int size, vector<int>& shift
     }
 }
 
-void search(vector<char>& line, vector<char>& pattern, vector<char>& score, gzFile logFile)
+void search(vector<char>& line, vector<char>& pattern, vector<char>& score, int& adaptRemov)
 {
     int lineSize = line.size();
     int patternSize = pattern.size();
     vector<int> shift(patternSize + 1, 0);
     int badchar[NO_OF_CHARS];
+
+    validate_vector(line);
 
     preprocess_strong_suffix(pattern, patternSize, shift);
     badCharHeuristic(pattern, patternSize, badchar);
@@ -104,15 +106,19 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, gzFi
     {
         for (int i = positions.size()-1; i >= 0; i--)
         {
-            //how to erase
+            /***********/
             vector<char> subLine(line.begin() + positions[i], line.begin() + positions[i] + patternSize);
             for (int j = 0; j < pattern.size(); j++) {
                 if (pattern[j] != subLine[j]) {                    
-                    gzWriteStringToGzFile(logFile, "****ADAPTER ERROR*****\n");
+                    cout << "****ADAPTER ERROR*****\n" << endl;
+                    exit(0);
                 }
             }
+            /***********/
+            //how to erase
             line.erase(line.begin() + positions[i], line.begin() + positions[i] + patternSize);
             score.erase(score.begin() + positions[i], score.begin() + positions[i] + patternSize);
+            adaptRemov++;
         }
     }
 }

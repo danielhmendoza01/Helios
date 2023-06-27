@@ -4,6 +4,7 @@
 #include <cstring>
 #include <vector>
 #include <zlib.h>
+#include "boyer.h"
 using namespace std;
 
 //takes the avg of the window and returns the cutoff if condition is met
@@ -38,7 +39,7 @@ int windowSlide(vector<int> numLine){
     return -1;
 }
 
-void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine){
+void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile){
     int baseSize = 50;
     for (char c : score) {
         int numericalValue = static_cast<int>(c) - 33;
@@ -51,6 +52,12 @@ void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLi
         // erase the ASCII and Sequence line at the cutoff
         score.erase(score.begin() + cutOff, score.end());
         line.erase(line.begin() + cutOff, line.end());
+        numTrimmed++;
     }
+    if (cutOff < baseSize && cutOff != -1)
+    {
+        gzWriteStringToGzFile(logFile, "***WARNING*****\nNot trimmed: Below min cut off");
+    }
+    
     
 }
