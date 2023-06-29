@@ -39,8 +39,9 @@ int main(){
     cout << "-----DONE-----" << endl;
     cout << "-----Summery-----" << endl;
     cout << "Adapters removed: " << adaptRemov << endl;
-    cout << "Read scores trimmed: " << numTrimmed << endl;
+    cout << "Read trimmed: " << numTrimmed << endl;
     cout << "Total reads: " << totalReads;
+    cout << totalReads-numTrimmed <<endl;
     //Summery
     return(1);
 }

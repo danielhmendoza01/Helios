@@ -1,5 +1,6 @@
 #include "fileReader.h"
 #include "window.h"
+#include "time.h"
 #include <chrono>
 #include <iomanip>
 #include <iostream>
@@ -11,10 +12,8 @@ using namespace std;
 
 int main() {
     cout << "-----Program Starting-----" << endl;
-    /*****/
-    unordered_set<std::string> identifierLines;
-    /*****/
     // Variables for chunking
+    unordered_set<std::string> identifierLines;
     char rawBuffer[1024];
     string buffer;
     vector<char> lines[4];
@@ -26,9 +25,12 @@ int main() {
     int totalReads = 0;
     int relativeReads = 0;
     int trackMin = 0;
+    //Keep track of times
+    Timer timer1;
+    Timer timer2;
+    Timer timer3;
     //print progress every 1 min (Set in seconds)
     int trackOccurrence = 60;
-    //Boyer Moore
     //string patternString = " ";
     //std::vector<char> pattern(patternString.begin(), patternString.end());
     vector<char> pattern {'C','G','T','G','T','G','C'};
@@ -42,20 +44,19 @@ int main() {
         return 1;
     }
     //output will be the trim fastq.gz file
-    gzFile outputFile = createGzFile("/scratch/dmendoza/Helios_Project/fastBoyWin/files/fastqFiles/outputR1.fastq.gz");
-    /******/
-    gzFile logFile = createGzFile("/scratch/dmendoza/Helios_Project/fastBoyWin/files/logs/logR1.txt.gz");
-    /******/
+    gzFile outputFile = createGzFile("/scratch/dmendoza/logs/files/fastqFiles/outputR1.fastq.gz");
+    gzFile logFile = createGzFile("/scratch/dmendoza/logs/files/logs/logR1.txt.gz");
     //While loop to read all information of read file
     auto start = std::chrono::steady_clock::now();
     cout << "-----Reading-----" << endl;
     while (true) {
+        timer1.start();
         int bytesRead = gzread(file, rawBuffer, sizeof(rawBuffer));
         if (bytesRead <= 0) {
             break;
         }
-
         buffer.append(rawBuffer, bytesRead);
+        timer1.stop();
 
         size_t pos;
         //while loop that finds a new line 
@@ -66,7 +67,6 @@ int main() {
             string lineData = buffer.substr(0, pos);
             lines[lineIndex].insert(lines[lineIndex].end(), lineData.begin(), lineData.end());
             buffer.erase(0, pos + 1);
-            /*********/
             if (lineIndex == 0){
                 string line(lines[0].begin(), lines[0].end());
                 try
@@ -87,12 +87,12 @@ int main() {
                     }
                 }
             }
-            /*********/
             //At lineIndex 3 the ASCII line occurs 
             if (lineIndex == 3) {
+                timer2.start();
                 //boyer
                 search(lines[1], pattern, lines[3], adaptRemov);
-                /******/
+                //Validate
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********BOYER UNDER MIN LENGTH ERROR*******\n"<< endl;
@@ -102,11 +102,13 @@ int main() {
                     cout << "********BOYER SAME LENGTH ERROR*******\n" << endl;
                     exit(0);
                 }
-                /*******/
-
+                
+                //cout << "Boyer Time"<<endl;
+                timer2.stop();
+                timer3.start();
                 //window
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile);
-                /******/
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, baseSize);
+                //Validate
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
@@ -116,7 +118,9 @@ int main() {
                     cout << "********WINDOW SAME LENGTH ERROR*******\n" << endl;
                     exit(0);
                 }
-                /*******/
+                //cout << "Window Time"<<endl;
+                timer3.stop();
+                
                 //write the 4 lines to the out file
                 for (int i = 0; i < 4; ++i) {
                     writeDataToGzFile(outputFile, lines[i]);
@@ -139,6 +143,7 @@ int main() {
             lines[lineIndex].insert(lines[lineIndex].end(), lineData.begin(), lineData.end());
             buffer.clear();
         }
+        //Cout stats
         auto check = std::chrono::steady_clock::now();
         auto timeElapsed = std::chrono::duration_cast<std::chrono::seconds>(check - start).count();
         if(timeElapsed / trackOccurrence != trackMin){
@@ -154,11 +159,16 @@ int main() {
     cout << "Closing files..." << endl;
     gzclose(file);
     gzclose(outputFile);
-    /******/
     gzclose(logFile);
     //end program
     cout << "-----DONE-----" << endl;
     cout << "-----Summery-----" << endl;
+    cout << "Total read time: ";
+    timer1.printElapsedTime();
+    cout << "Total Boyer time: ";
+    timer2.printElapsedTime();
+    cout << "Total window time: ";
+    timer3.printElapsedTime();
     cout << "Adapters removed: " << adaptRemov << endl;
     cout << "Read scores trimmed: " << numTrimmed << endl;
     //Summery

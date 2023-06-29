@@ -39,8 +39,8 @@ int windowSlide(vector<int> numLine){
     return -1;
 }
 
-void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile){
-    int baseSize = 50;
+void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile, int baseSize){
+    //ASCII to Text
     for (char c : score) {
         int numericalValue = static_cast<int>(c) - 33;
         numericLine.push_back(numericalValue);
@@ -54,9 +54,10 @@ void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLi
         line.erase(line.begin() + cutOff, line.end());
         numTrimmed++;
     }
+    // If it was not trimmed send a warning
     if (cutOff < baseSize && cutOff != -1)
     {
-        gzWriteStringToGzFile(logFile, "***WARNING*****\nNot trimmed: Below min cut off");
+        gzWriteStringToGzFile(logFile, "***WARNING*****\nNot trimmed: Below min cut off\n");
     }
     
     

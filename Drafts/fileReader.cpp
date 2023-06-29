@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    const char *filename = "/scratch/dmendoza/logs/files/fastqFiles/tTest/temp1.fastq.gz";
+    const char *filename = "/scratch/dmendoza/logs/files/logs/logR1.txt.gz";
 
     gzFile file = gzopen(filename, "r");
     if (file == nullptr) {
@@ -20,7 +20,7 @@ int main() {
         // bytesRead can be used to track the progress
         // Example: Print the buffer
         std::cout.write(buffer, bytesRead);
-        break;
+        //break;
     }
     cout << endl;
     cout << "______________________________________________________________________________________________________________________________________________________" << endl;

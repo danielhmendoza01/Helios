@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=job_P1T
+#SBATCH --job-name=job_P1
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=dmendoza@tgen.org
 #SBATCH --ntasks=1

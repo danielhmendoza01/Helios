@@ -34,7 +34,7 @@ void fileSplit(string inFile, vector<string>& tempFilesPath, vector<string>& tem
     }
 
     int bytesRead;
-    uint64_t bufferSize = (1048576*100); // Size of buffer, 1MB is 1048576
+    uint64_t bufferSize = (1024); // Size of buffer, 1MB is 1048576
     std::vector<char> buffer(bufferSize); // Buffer to read data into
     int tempFileID = 0; // Counter for temporary files
     uint64_t totalBytes = 0;
@@ -52,7 +52,7 @@ void fileSplit(string inFile, vector<string>& tempFilesPath, vector<string>& tem
             //buffer.resize(bytesRead + tempDataBuffer.size());
             tempDataBuffer.clear();
         }
-        if(totalBytes > GIGABYTE/2){
+        if(totalBytes > GIGABYTE*3){
             /*******/
             auto endBufferIter = buffer.rbegin();
             auto plusSignIter = find(endBufferIter, buffer.rend(), '+'); 
@@ -106,7 +106,7 @@ void fileSplit(string inFile, vector<string>& tempFilesPath, vector<string>& tem
             tempFileID++; 
             totalBytes=0;
             if(tempFileID > tempFiles.size()-1){
-                gzFile tempFile = createGzFile("/scratch/dmendoza/Helios_Project/fastBoyWin/files/fastqFiles/tTest/temp" + to_string(tempFileID) + ".fastq.gz");
+                gzFile tempFile = createGzFile("/scratch/dmendoza/logs/files/fastqFiles/tTest/temp" + to_string(tempFileID) + ".fastq.gz");
                 tempFiles.push_back(tempFile);
             }            
         }
