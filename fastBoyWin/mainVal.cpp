@@ -29,6 +29,7 @@ int main() {
     Timer timer1;
     Timer timer2;
     Timer timer3;
+    Timer timer4;
     //print progress every 1 min (Set in seconds)
     int trackOccurrence = 60;
     //string patternString = " ";

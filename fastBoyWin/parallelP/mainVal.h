@@ -7,6 +7,7 @@
 #include <cstring>
 #include <vector>
 #include <zlib.h>
+#include <omp.h>
 using namespace std;
 void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, int& totalReads){
     #pragma omp critial

@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    const char *filename = "/scratch/dmendoza/logs/files/logs/logR1.txt.gz";
+    const char *filename = "/scratch/dmendoza/logs/files/fastqFiles/tTestOut/bigfile-split14.fastq";
 
     gzFile file = gzopen(filename, "r");
     if (file == nullptr) {
