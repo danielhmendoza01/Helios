@@ -1,5 +1,5 @@
-#include "fileReader.h"
 #include "window.h"
+#include "time.h"
 #include <chrono>
 #include <iomanip>
 #include <iostream>
@@ -9,12 +9,16 @@
 #include <zlib.h>
 #include <omp.h>
 using namespace std;
-void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, int& totalReads){
-    #pragma omp critial
+void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads){
+    #pragma omp critical
     {
-    cout << "-----Program TRIM Starting-----\nWith Thread: " << omp_get_thread_num << endl;
+    cout << "TRIM Startin with thread: " << omp_get_thread_num() << endl;
     }
     // Needed variables
+    Timer inTimer;
+    Timer boyerTimer;
+    Timer windowTimer;
+    Timer writeTimer;
     unordered_set<std::string> identifierLines;
     const unsigned long GIGABYTE = 1024 * 1024 * 1024;
     char rawBuffer[1024];
@@ -28,7 +32,6 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     vector<int> cutIndexes;
     // Variables set by user
     int baseSize = 50; //flex
-    const char* filename = inFile.data();
 
     //string patternString = " ";
     //std::vector<char> pattern(patternString.begin(), patternString.end());
@@ -36,29 +39,28 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     int patternSize = pattern.size();
     
     //File that needes to be read
-    gzFile file = gzopen(filename, "r");
-    if (file == nullptr) {
-        cerr << "Error opening file: " << filename << endl;
+    ifstream file(inFile);
+    if (!file.is_open()) {
+        cerr << "Error opening file: " << inFile << endl;
         exit(0);
     }
 
-    /*********************/
-    //output will be the trim fastq.gz file
-    gzFile outputFile = createGzFile(outFile);
-    /********************/
-    //gzFile logFile = createGzFile("/scratch/dmendoza/logs/files/logs/logT1.txt.gz");
-    /*******************/
+    //output will be the trim fastq file
+    ofstream outputFile(outFile);
 
     //While loop to read all information of read file
     auto start = std::chrono::steady_clock::now();
 
     while (true) {
-        int bytesRead = gzread(file, rawBuffer, sizeof(rawBuffer));
+        // Read file with buffer size
+        inTimer.start();
+        file.read(rawBuffer, sizeof(rawBuffer));
+        int bytesRead = file.gcount();
         if (bytesRead <= 0) {
             break;
         }
-
         buffer.append(rawBuffer, bytesRead);
+        inTimer.stop();
 
         size_t pos;
         //while loop that finds a new line 
@@ -69,7 +71,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
             string lineData = buffer.substr(0, pos);
             lines[lineIndex].insert(lines[lineIndex].end(), lineData.begin(), lineData.end());
             buffer.erase(0, pos + 1);
-            /*********/
+
             if (lineIndex == 0){
                 string line(lines[0].begin(), lines[0].end());
                 try
@@ -82,6 +84,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
                     std::cerr << e.what() << '\n';
                 }
             }
+
             if (lineIndex == 2){
                 for(int i = 0; i<lines[2].size(); i++){
                     if (lines[2][i] != '+'){
@@ -90,12 +93,12 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
                     }
                 }
             }
-            /*********/
-            //At lineIndex 3 the ASCII line occurs 
+
+            // At lineIndex 3 the ASCII line occurs(4th line)
             if (lineIndex == 3) {
                 //boyer
+                boyerTimer.start();
                 search(lines[1], pattern, lines[3], adaptRemov);
-                /******/
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********BOYER UNDER MIN LENGTH ERROR*******\n"<< endl;
@@ -105,11 +108,11 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
                     cout << "********BOYER SAME LENGTH ERROR*******\n" << endl;
                     exit(0);
                 }
-                /*******/
+                boyerTimer.stop();
 
                 //window
+                windowTimer.start();
                 eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile);
-                /******/
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
@@ -119,13 +122,17 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
                     cout << "********WINDOW SAME LENGTH ERROR*******\n" << endl;
                     exit(0);
                 }
-                /*******/
+                windowTimer.stop();
+
+                writeTimer.start();
                 //write the 4 lines to the out file
                 for (int i = 0; i < 4; ++i) {
-                    writeDataToGzFile(outputFile, lines[i]);
+                    outputFile.write(&lines[i][0], lines[i].size());
+                    outputFile << "\n";
                     lines[i].clear();
                 }
                 numericLine.clear();
+                writeTimer.stop();
                 totalReads++;
                 relativeReads++;
             }
@@ -145,15 +152,32 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
         auto check = std::chrono::steady_clock::now();
         auto timeElapsed = std::chrono::duration_cast<std::chrono::seconds>(check - start).count();
         if(timeElapsed / trackOccurrence != trackMin){
+            #pragma omp critical
+            {
             cout << "Time: " << timeElapsed/trackOccurrence << " Min" << setw(18);
             cout << "Total Reads: " << totalReads<< setw(18);
             cout << "Reads/Min: " << relativeReads <<"\n" << endl;
+            }
             relativeReads = 0;
             trackMin++;
         }
     }
     //close files
-    cout << "-----Ending-----" << endl;
-    cout << "Closing file..." << endl;
-    gzclose(file);
+    #pragma omp critical
+    {
+    cout << "Thread " << omp_get_thread_num() << endl;
+    cout << "-----Ending File: " << inFile<< "-----" << endl;
+    cout << "Total Reads: " << totalReads << endl;
+    cout << "Total read ";
+    inTimer.printElapsedTime();
+    cout << "Boyer ";
+    boyerTimer.printElapsedTime();
+    cout << "Window ";
+    windowTimer.printElapsedTime();
+    cout << "Write ";
+    writeTimer.printElapsedTime();
+    cout << "Closed: " << inFile << endl;
+    }
+    file.close();
+    outputFile.close();
 }

@@ -8,18 +8,22 @@
 #include <zlib.h>
 using namespace std;
 
+//Function to create a GZ File that can be written
+gzFile createGzFile(const std::string& filename) {
+    gzFile file = gzopen(filename.c_str(), "wb");
+    if (file == nullptr) {
+        std::cerr << "Error opening " << filename << " for writing." << std::endl;
+        exit(1);
+    }
+    return file;
+}
+
 void gzWriteStringToGzFile(gzFile file, string data){
     gzwrite(file, data.c_str(), static_cast<int>(data.length()));
 }
 
 void gzWriteIntToGzFile(gzFile file, int data){
     gzwrite(file, to_string(data).c_str(),static_cast<int>(to_string(data).length()));
-}
-
-void gzWriteCut(gzFile file, int data){
-    gzWriteStringToGzFile(file, "Cut: ");
-    gzWriteIntToGzFile(file, data);
-    gzWriteStringToGzFile(file, "\n");
 }
 
 void checkDuplicates(unordered_set<std::string>& identifierLines, string line){

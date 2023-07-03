@@ -5,7 +5,7 @@
 #include <zlib.h>
 #include <cstring>
 #include <vector>
-#include "validate.h"
+#include "filehelper.h"
 using namespace std;
 
 // 256 is needed for array memory based on ASCII char
