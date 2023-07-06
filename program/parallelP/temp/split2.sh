@@ -1,0 +1,1 @@
+zcat /scratch/dmendoza/logs/testFiles/8276-200M.fastq.gz | split -l 40000000 - prefix

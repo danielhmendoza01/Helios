@@ -9,14 +9,14 @@
 #include <zlib.h>
 #include <omp.h>
 using namespace std;
-void trim(string inFile, string outFile, gzFile logFile, gzFile untrimmedFile, int& numTrimmed, int& adaptRemov, long& totalReads){
+void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads){
     #pragma omp critical
     {
     cout << "TRIM Startin with thread: " << omp_get_thread_num() << endl;
     }
-    bool trimmed = false;
-    vector<char> temp1;
-    vector<char> temp2;
+    //bool trimmed = false;
+    //vector<char> temp1;
+    //vector<char> temp2;
     // Needed variables
     Timer inTimer;
     Timer boyerTimer;
@@ -115,7 +115,7 @@ void trim(string inFile, string outFile, gzFile logFile, gzFile untrimmedFile, i
 
                 //window
                 windowTimer.start();
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, trimmed, temp1, temp2);
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile);
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
@@ -129,7 +129,7 @@ void trim(string inFile, string outFile, gzFile logFile, gzFile untrimmedFile, i
 
                 writeTimer.start();
                 //write the 4 lines to the out file
-                if(trimmed){
+                /*if(trimmed){
                     #pragma omp critical
                     {
                     gzwrite(untrimmedFile, &lines[0][0], lines[0].size()); //@
@@ -140,7 +140,7 @@ void trim(string inFile, string outFile, gzFile logFile, gzFile untrimmedFile, i
                     temp2.clear();
                     trimmed = false;
                     }
-                }
+                }*/
                 for (int i = 0; i < 4; ++i) {
                     outputFile.write(&lines[i][0], lines[i].size());
                     outputFile << "\n";
@@ -169,6 +169,7 @@ void trim(string inFile, string outFile, gzFile logFile, gzFile untrimmedFile, i
         if(timeElapsed / trackOccurrence != trackTime){
             #pragma omp critical
             {
+            cout << "Thread: " << omp_get_thread_num() << setw(9);
             cout << "Time: " << timeElapsed << " Sec" << setw(18);
             cout << "Total Reads: " << totalReads<< setw(18);
             cout << "Reads/Min: " << relativeReads <<"\n" << endl;
