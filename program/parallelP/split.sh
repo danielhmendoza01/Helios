@@ -6,7 +6,7 @@ inPath="$2"
 echo "$readFile"
 
 gunzip < "$readFile" | \
-awk -v sizeLimit=$((2*1024*1024*1024)) -v outDir="$inPath" '
+awk -v sizeLimit=$((4*1024*1024*1024)) -v outDir="$inPath" '
 BEGIN {
     suffix=1;
     outputFile=outDir "/split" sprintf("%02d", suffix) ".fastq";

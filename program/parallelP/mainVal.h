@@ -9,11 +9,14 @@
 #include <zlib.h>
 #include <omp.h>
 using namespace std;
-void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads){
+void trim(string inFile, string outFile, gzFile logFile, gzFile untrimmedFile, int& numTrimmed, int& adaptRemov, long& totalReads){
     #pragma omp critical
     {
     cout << "TRIM Startin with thread: " << omp_get_thread_num() << endl;
     }
+    bool trimmed = false;
+    vector<char> temp1;
+    vector<char> temp2;
     // Needed variables
     Timer inTimer;
     Timer boyerTimer;
@@ -27,15 +30,15 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     vector<int> numericLine;
     int lineIndex = 0;
     int relativeReads = 0;
-    int trackMin = 0;
-    int trackOccurrence = 60;
+    int trackTime = 0;
+    int trackOccurrence = 30;
     vector<int> cutIndexes;
     // Variables set by user
     int baseSize = 50; //flex
 
-    //string patternString = " ";
-    //std::vector<char> pattern(patternString.begin(), patternString.end());
-    vector<char> pattern {'C','G','T','G','T','G','C'}; //flex
+    string patternString = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA";
+    vector<char> pattern(patternString.begin(), patternString.end());
+    //vector<char> pattern {'C','G','T','G','T','G','C'}; //flex
     int patternSize = pattern.size();
     
     //File that needes to be read
@@ -47,7 +50,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
     //output will be the trim fastq file
     ofstream outputFile(outFile);
-
+    //ofstream untrimmedFile("/scratch/dmendoza/logs/testFiles/unTrimmed.fastq");
     //While loop to read all information of read file
     auto start = std::chrono::steady_clock::now();
 
@@ -112,7 +115,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 //window
                 windowTimer.start();
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile);
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, trimmed, temp1, temp2);
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
@@ -126,6 +129,18 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 writeTimer.start();
                 //write the 4 lines to the out file
+                if(trimmed){
+                    #pragma omp critical
+                    {
+                    gzwrite(untrimmedFile, &lines[0][0], lines[0].size()); //@
+                    gzwrite(untrimmedFile, temp1.data(), temp1.size()); //ATGC
+                    gzwrite(untrimmedFile, &lines[2][0], lines[0].size()); //+
+                    gzwrite(untrimmedFile, temp2.data(), temp2.size()); //FFF
+                    temp1.clear();
+                    temp2.clear();
+                    trimmed = false;
+                    }
+                }
                 for (int i = 0; i < 4; ++i) {
                     outputFile.write(&lines[i][0], lines[i].size());
                     outputFile << "\n";
@@ -151,15 +166,15 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
         }
         auto check = std::chrono::steady_clock::now();
         auto timeElapsed = std::chrono::duration_cast<std::chrono::seconds>(check - start).count();
-        if(timeElapsed / trackOccurrence != trackMin){
+        if(timeElapsed / trackOccurrence != trackTime){
             #pragma omp critical
             {
-            cout << "Time: " << timeElapsed/trackOccurrence << " Min" << setw(18);
+            cout << "Time: " << timeElapsed << " Sec" << setw(18);
             cout << "Total Reads: " << totalReads<< setw(18);
             cout << "Reads/Min: " << relativeReads <<"\n" << endl;
             }
             relativeReads = 0;
-            trackMin++;
+            trackTime++;
         }
     }
     //close files

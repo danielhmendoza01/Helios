@@ -40,7 +40,7 @@ int windowSlide(vector<int> numLine){
     return -1;
 }
 
-void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile){
+void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile, bool& trimmed, vector<char>& temp1, vector<char>& temp2){
     int baseSize = 50;
     for (char c : score) {
         int numericalValue = static_cast<int>(c) - 33;
@@ -51,6 +51,9 @@ void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLi
     // if the cut off is not -1 it holds the threshold index to cutoff
     if (cutOff != -1 && cutOff >= baseSize){
         // erase the ASCII and Sequence line at the cutoff
+        trimmed = true;
+        temp1.insert(temp1.end(), score.begin(), score.end());
+        temp2.insert(temp2.end(), line.begin(), line.end());
         score.erase(score.begin() + cutOff, score.end());
         line.erase(line.begin() + cutOff, line.end());
         numTrimmed++;

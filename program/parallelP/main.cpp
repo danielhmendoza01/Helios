@@ -10,7 +10,7 @@
 #include <dirent.h>
 using namespace std;
 
-string readFile = "/scratch/dmendoza/Scripts/8276-200M.fastq.gz";
+string readFile = "/scratch/dmendoza/logs/testFiles/8276.fastq.gz";
 string inPath = "/scratch/dmendoza/logs/files/fastqFiles/tTest/";
 string outPath = "/scratch/dmendoza/logs/files/fastqFiles/tTestOut/";
 string combPath = "/scratch/dmendoza/logs/files/fastqFiles/";
@@ -22,6 +22,7 @@ int main(){
     Timer trimTimer;
     Timer combineTimer;
     gzFile logFile = createGzFile("/scratch/dmendoza/logs/files/logs/logT1.txt.gz");
+    gzFile untrimmedFile = createGzFile("/scratch/dmendoza/logs/testFiles/unTrimmed.fastq.gz");
 
     //variables trackes across all files
     int numTrimmed = 0;
@@ -57,7 +58,7 @@ int main(){
     trimTimer.start();
     #pragma omp parallel for
     for(int i =0; i < fastqFiles.size(); i++){
-        trim(fastqFiles[i], outFiles[i], logFile, numTrimmed, adaptRemov, totalReads);
+        trim(fastqFiles[i], outFiles[i], logFile, untrimmedFile, numTrimmed, adaptRemov, totalReads);
     }
     trimTimer.stop();
     cout << "Trim ";
@@ -73,6 +74,7 @@ int main(){
     combineTimer.stop();
 
     gzclose(logFile);
+    gzclose(untrimmedFile);
     //end program
     cout << "-----DONE-----" << endl;
     cout << "-----Summery-----" << endl;
