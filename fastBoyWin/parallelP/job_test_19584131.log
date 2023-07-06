@@ -1,0 +1,114 @@
+*****SPLITING*****
+/scratch/dmendoza/Scripts/8276-200M.fastq.gz
+Split elapsed time: 179 seconds.
+Attempting parallel trim
+TRIM Startin with thread: 0
+TRIM Startin with thread: 3
+TRIM Startin with thread: 7
+TRIM Startin with thread: 5
+TRIM Startin with thread: 1
+TRIM Startin with thread: 8
+TRIM Startin with thread: 2
+TRIM Startin with thread: 4
+TRIM Startin with thread: 6
+Time: 1 Min     Total Reads: 27458816       Reads/Min: 3231089
+
+Time: 1 Min     Total Reads: 27459075       Reads/Min: 3080063
+
+Time: 1 Min     Total Reads: 27459601       Reads/Min: 3192794
+
+Time: 1 Min     Total Reads: 27460083       Reads/Min: 3208111
+
+Time: 1 Min     Total Reads: 27460729       Reads/Min: 3223745
+
+Time: 1 Min     Total Reads: 27461512       Reads/Min: 2818262
+
+Time: 1 Min     Total Reads: 27463889       Reads/Min: 3062788
+
+Time: 1 Min     Total Reads: 27464403       Reads/Min: 3027024
+
+Time: 1 Min     Total Reads: 27464957       Reads/Min: 3008627
+
+Thread 4
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split09.fastq-----
+Total Reads: 30590138
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 17 seconds.
+Window elapsed time: 20 seconds.
+Write elapsed time: 5 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split09.fastq
+Thread 3
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split03.fastq-----
+Total Reads: 47433838
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 28 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 5 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split03.fastq
+Thread 5
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split02.fastq-----
+Total Reads: 47785550
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 28 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 6 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split02.fastq
+Thread 7
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split08.fastq-----
+Total Reads: 47834673
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 28 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 6 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split08.fastq
+Thread 8
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split07.fastq-----
+Total Reads: 48312671
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 28 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split07.fastq
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split04.fastq-----
+Total Reads: 48476762
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 28 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split04.fastq
+Thread 2
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split05.fastq-----
+Total Reads: 48568570
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 28 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split05.fastq
+Thread 6
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split01.fastq-----
+Total Reads: 49056754
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 29 seconds.
+Window elapsed time: 35 seconds.
+Write elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split01.fastq
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split06.fastq-----
+Total Reads: 49248047
+Total read elapsed time: 0 seconds.
+Boyer elapsed time: 31 seconds.
+Window elapsed time: 36 seconds.
+Write elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split06.fastq
+Trim elapsed time: 121 seconds.
+Success! Combining Temp Files
+Combining 
+-----DONE-----
+-----Summery-----
+Adapters removed: 210977
+Read trimmed: 5524747
+Total reads: 49248047
+real	6m53.587s
+user	53m13.244s
+sys	1m13.506s

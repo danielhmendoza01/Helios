@@ -8,4 +8,4 @@
 #SBATCH --time=24:00:00
 #SBATCH --output=job_test_%j.log
 
-./main
+time ./main

@@ -10,7 +10,7 @@
 #include <dirent.h>
 using namespace std;
 
-string readFile = "/scratch/dmendoza/Sample_COVA_8059_1_OV_Whole_C1_KHWGS_K20519_HKVHCDSXY/COVA_8059_1_OV_Whole_C1_KHWGS_K20519_HKVHCDSXY_TTGGACGT_L004_R1_001.fastq.gz";
+string readFile = "/scratch/dmendoza/Scripts/8276-200M.fastq.gz";
 string inPath = "/scratch/dmendoza/logs/files/fastqFiles/tTest/";
 string outPath = "/scratch/dmendoza/logs/files/fastqFiles/tTestOut/";
 string combPath = "/scratch/dmendoza/logs/files/fastqFiles/";
@@ -80,5 +80,5 @@ int main(){
     cout << "Read trimmed: " << numTrimmed << endl;
     cout << "Total reads: " << totalReads;
     //Summery
-    return(1);
+    return 0;
 }
