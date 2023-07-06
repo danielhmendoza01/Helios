@@ -10,7 +10,7 @@
 #include <dirent.h>
 using namespace std;
 
-string readFile = "/scratch/dmendoza/logs/testFiles/8276-200M.fastq.gz";
+string readFile = "/scratch/dmendoza/logs/testFiles/unTrimmed.fastq.gz";
 string inPath = "/scratch/dmendoza/logs/files/fastqFiles/tTest/";
 string outPath = "/scratch/dmendoza/logs/files/fastqFiles/tTestOut/";
 string combPath = "/scratch/dmendoza/logs/files/fastqFiles/";
