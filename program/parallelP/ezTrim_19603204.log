@@ -1,0 +1,394 @@
+*****SPLITING*****
+/scratch/dmendoza/logs/testFiles/8276.fastq.gz
+Split elapsed time: 236 seconds.
+Attempting parallel trim
+TRIM Startin with thread: 1
+TRIM Startin with thread: 2
+TRIM Startin with thread: 6
+TRIM Startin with thread: 3
+TRIM Startin with thread: 7
+TRIM Startin with thread: 0
+TRIM Startin with thread: 8
+TRIM Startin with thread: 4
+TRIM Startin with thread: 5
+TRIM Startin with thread: 9
+Thread: 2    Time: 30 Sec         Total Reads: 14763609    Reads per 30 sec: 1530138
+
+Thread: 1    Time: 30 Sec         Total Reads: 14764102    Reads per 30 sec: 1549662
+
+Thread: 0    Time: 30 Sec         Total Reads: 14764760    Reads per 30 sec: 1047548
+
+Thread: 3    Time: 30 Sec         Total Reads: 14765467    Reads per 30 sec: 1572910
+
+Thread: 6    Time: 30 Sec         Total Reads: 14765839    Reads per 30 sec: 1530973
+
+Thread: 7    Time: 30 Sec         Total Reads: 14766400    Reads per 30 sec: 1554836
+
+Thread: 8    Time: 30 Sec         Total Reads: 14767006    Reads per 30 sec: 1549584
+
+Thread: 9    Time: 30 Sec         Total Reads: 14767421    Reads per 30 sec: 1553823
+
+Thread: 5    Time: 30 Sec         Total Reads: 14767745    Reads per 30 sec: 1573217
+
+Thread: 4    Time: 30 Sec         Total Reads: 14768522    Reads per 30 sec: 1547375
+
+Thread: 2    Time: 60 Sec         Total Reads: 27531836    Reads per 30 sec: 1266283
+
+Thread: 1    Time: 60 Sec         Total Reads: 27532034    Reads per 30 sec: 1411690
+
+Thread: 0    Time: 60 Sec         Total Reads: 27532695    Reads per 30 sec: 1111584
+
+Thread: 3    Time: 60 Sec         Total Reads: 27533391    Reads per 30 sec: 1389233
+
+Thread: 6    Time: 60 Sec         Total Reads: 27533768    Reads per 30 sec: 1322389
+
+Thread: 7    Time: 60 Sec         Total Reads: 27534326    Reads per 30 sec: 1338830
+
+Thread: 8    Time: 60 Sec         Total Reads: 27534914    Reads per 30 sec: 1328148
+
+Thread: 9    Time: 60 Sec         Total Reads: 27535348    Reads per 30 sec: 1296697
+
+Thread: 5    Time: 60 Sec         Total Reads: 27535643    Reads per 30 sec: 1266414
+
+Thread: 4    Time: 60 Sec         Total Reads: 27536390    Reads per 30 sec: 1236350
+
+Thread: 2    Time: 90 Sec         Total Reads: 41032896    Reads per 30 sec: 1289628
+
+Thread: 1    Time: 90 Sec         Total Reads: 41033284    Reads per 30 sec: 1467663
+
+Thread: 0    Time: 90 Sec         Total Reads: 41033946    Reads per 30 sec: 1034567
+
+Thread: 3    Time: 90 Sec         Total Reads: 41034706    Reads per 30 sec: 1432362
+
+Thread: 6    Time: 90 Sec         Total Reads: 41034880    Reads per 30 sec: 1354323
+
+Thread: 7    Time: 90 Sec         Total Reads: 41035414    Reads per 30 sec: 1437255
+
+Thread: 8    Time: 90 Sec         Total Reads: 41035930    Reads per 30 sec: 1459039
+
+Thread: 9    Time: 90 Sec         Total Reads: 41036263    Reads per 30 sec: 1426766
+
+Thread: 5    Time: 90 Sec         Total Reads: 41036586    Reads per 30 sec: 1418368
+
+Thread: 4    Time: 90 Sec         Total Reads: 41037212    Reads per 30 sec: 1389481
+
+Thread: 2    Time: 120 Sec         Total Reads: 52838015    Reads per 30 sec: 1119154
+
+Thread: 1    Time: 120 Sec         Total Reads: 52838118    Reads per 30 sec: 1237707
+
+Thread: 0    Time: 120 Sec         Total Reads: 52838561    Reads per 30 sec: 993336
+
+Thread: 3    Time: 120 Sec         Total Reads: 52839209    Reads per 30 sec: 1243241
+
+Thread: 6    Time: 120 Sec         Total Reads: 52839583    Reads per 30 sec: 1177639
+
+Thread: 7    Time: 120 Sec         Total Reads: 52840097    Reads per 30 sec: 1241264
+
+Thread: 8    Time: 120 Sec         Total Reads: 52840680    Reads per 30 sec: 1239853
+
+Thread: 9    Time: 120 Sec         Total Reads: 52841102    Reads per 30 sec: 1242915
+
+Thread: 5    Time: 120 Sec         Total Reads: 52841419    Reads per 30 sec: 1246878
+
+Thread: 4    Time: 120 Sec         Total Reads: 52841681    Reads per 30 sec: 1244393
+
+Thread: 2    Time: 150 Sec         Total Reads: 66206835    Reads per 30 sec: 1279284
+
+Thread: 1    Time: 150 Sec         Total Reads: 66207236    Reads per 30 sec: 1394821
+
+Thread: 0    Time: 150 Sec         Total Reads: 66207902    Reads per 30 sec: 1181965
+
+Thread: 3    Time: 150 Sec         Total Reads: 66208611    Reads per 30 sec: 1387939
+
+Thread: 6    Time: 150 Sec         Total Reads: 66209014    Reads per 30 sec: 1329743
+
+Thread: 7    Time: 150 Sec         Total Reads: 66209564    Reads per 30 sec: 1379177
+
+Thread: 8    Time: 150 Sec         Total Reads: 66210207    Reads per 30 sec: 1373434
+
+Thread: 9    Time: 150 Sec         Total Reads: 66210643    Reads per 30 sec: 1448722
+
+Thread: 5    Time: 150 Sec         Total Reads: 66210971    Reads per 30 sec: 1399532
+
+Thread: 4    Time: 150 Sec         Total Reads: 66211709    Reads per 30 sec: 1398392
+
+Thread: 2    Time: 180 Sec         Total Reads: 78960419    Reads per 30 sec: 1106733
+
+Thread: 1    Time: 180 Sec         Total Reads: 78960998    Reads per 30 sec: 1362131
+
+Thread: 0    Time: 180 Sec         Total Reads: 78961638    Reads per 30 sec: 1157006
+
+Thread: 3    Time: 180 Sec         Total Reads: 78962400    Reads per 30 sec: 1368820
+
+Thread: 6    Time: 180 Sec         Total Reads: 78962821    Reads per 30 sec: 1217109
+
+Thread: 7    Time: 180 Sec         Total Reads: 78963383    Reads per 30 sec: 1371751
+
+Thread: 8    Time: 180 Sec         Total Reads: 78964034    Reads per 30 sec: 1366217
+
+Thread: 9    Time: 180 Sec         Total Reads: 78964474    Reads per 30 sec: 1313957
+
+Thread: 5    Time: 180 Sec         Total Reads: 78964800    Reads per 30 sec: 1362409
+
+Thread: 4    Time: 180 Sec         Total Reads: 78965605    Reads per 30 sec: 1315270
+
+Thread: 2    Time: 210 Sec         Total Reads: 93337372    Reads per 30 sec: 1426027
+
+Thread: 1    Time: 210 Sec         Total Reads: 93337776    Reads per 30 sec: 1506712
+
+Thread: 6    Time: 210 Sec         Total Reads: 93339288    Reads per 30 sec: 1486528
+
+Thread: 7    Time: 210 Sec         Total Reads: 93339751    Reads per 30 sec: 1510484
+
+Thread: 8    Time: 210 Sec         Total Reads: 93340282    Reads per 30 sec: 1514031
+
+Thread: 9    Time: 210 Sec         Total Reads: 93340619    Reads per 30 sec: 1508604
+
+Thread: 5    Time: 210 Sec         Total Reads: 93340910    Reads per 30 sec: 1508455
+
+Thread: 4    Time: 210 Sec         Total Reads: 93341557    Reads per 30 sec: 1512925
+
+Thread: 3    Time: 210 Sec         Total Reads: 93363745    Reads per 30 sec: 1512939
+
+Thread: 0    Time: 211 Sec         Total Reads: 93914135    Reads per 30 sec: 1111796
+
+Thread: 2    Time: 240 Sec         Total Reads: 105777954    Reads per 30 sec: 1323391
+
+Thread: 1    Time: 240 Sec         Total Reads: 105778217    Reads per 30 sec: 1385419
+
+Thread: 0    Time: 240 Sec         Total Reads: 105778612    Reads per 30 sec: 1118292
+
+Thread: 3    Time: 240 Sec         Total Reads: 105779036    Reads per 30 sec: 1416430
+
+Thread: 6    Time: 240 Sec         Total Reads: 105779248    Reads per 30 sec: 1044651
+
+Thread: 7    Time: 240 Sec         Total Reads: 105779596    Reads per 30 sec: 1410443
+
+Thread: 8    Time: 240 Sec         Total Reads: 105780022    Reads per 30 sec: 1407423
+
+Thread: 9    Time: 240 Sec         Total Reads: 105780293    Reads per 30 sec: 1163735
+
+Thread: 5    Time: 240 Sec         Total Reads: 105780479    Reads per 30 sec: 1183145
+
+Thread: 4    Time: 240 Sec         Total Reads: 105781026    Reads per 30 sec: 1171814
+
+Thread: 2    Time: 270 Sec         Total Reads: 115853080    Reads per 30 sec: 982286
+
+Thread: 9    Time: 270 Sec         Total Reads: 115853240    Reads per 30 sec: 1012602
+
+Thread: 4    Time: 270 Sec         Total Reads: 115853243    Reads per 30 sec: 1045123
+
+Thread: 5    Time: 270 Sec         Total Reads: 115853246    Reads per 30 sec: 1063907
+
+Thread: 3    Time: 270 Sec         Total Reads: 115853247    Reads per 30 sec: 1059597
+
+Thread: 1    Time: 270 Sec         Total Reads: 115853250    Reads per 30 sec: 962574
+
+Thread: 6    Time: 270 Sec         Total Reads: 115853254    Reads per 30 sec: 1010016
+
+Thread: 8    Time: 270 Sec         Total Reads: 115853255    Reads per 30 sec: 1034054
+
+Thread: 0    Time: 270 Sec         Total Reads: 115853262    Reads per 30 sec: 1001505
+
+Thread: 7    Time: 270 Sec         Total Reads: 115853700    Reads per 30 sec: 1045817
+
+Thread: 2    Time: 300 Sec         Total Reads: 128665025    Reads per 30 sec: 1277963
+
+Thread: 4    Time: 300 Sec         Total Reads: 128665040    Reads per 30 sec: 1344726
+
+Thread: 5    Time: 300 Sec         Total Reads: 128665040    Reads per 30 sec: 1363859
+
+Thread: 0    Time: 300 Sec         Total Reads: 128665043    Reads per 30 sec: 1138295
+
+Thread: 6    Time: 300 Sec         Total Reads: 128665045    Reads per 30 sec: 1267868
+
+Thread: 9    Time: 300 Sec         Total Reads: 128803469    Reads per 30 sec: 1318014
+
+Thread: 1    Time: 300 Sec         Total Reads: 128815036    Reads per 30 sec: 1313356
+
+Thread: 3    Time: 300 Sec         Total Reads: 128820018    Reads per 30 sec: 1314671
+
+Thread: 7    Time: 300 Sec         Total Reads: 128823771    Reads per 30 sec: 1315779
+
+Thread: 8    Time: 301 Sec         Total Reads: 128991492    Reads per 30 sec: 1320584
+
+Thread: 2    Time: 330 Sec         Total Reads: 140253378    Reads per 30 sec: 1119477
+
+Thread: 3    Time: 330 Sec         Total Reads: 140253519    Reads per 30 sec: 1197143
+
+Thread: 6    Time: 330 Sec         Total Reads: 140253526    Reads per 30 sec: 1149503
+
+Thread: 0    Time: 330 Sec         Total Reads: 140253559    Reads per 30 sec: 1094515
+
+Thread: 7    Time: 330 Sec         Total Reads: 140253561    Reads per 30 sec: 1197213
+
+Thread: 8    Time: 330 Sec         Total Reads: 140253843    Reads per 30 sec: 1176789
+
+Thread: 9    Time: 330 Sec         Total Reads: 140254194    Reads per 30 sec: 1186249
+
+Thread: 5    Time: 330 Sec         Total Reads: 140254494    Reads per 30 sec: 1227390
+
+Thread: 4    Time: 330 Sec         Total Reads: 140255161    Reads per 30 sec: 1208658
+
+Thread: 1    Time: 330 Sec         Total Reads: 140389695    Reads per 30 sec: 1169453
+
+Thread: 2    Time: 360 Sec         Total Reads: 149541875    Reads per 30 sec: 999504
+
+Thread: 1    Time: 360 Sec         Total Reads: 149542295    Reads per 30 sec: 899185
+
+Thread: 0    Time: 360 Sec         Total Reads: 149542891    Reads per 30 sec: 969771
+
+Thread: 3    Time: 360 Sec         Total Reads: 149543528    Reads per 30 sec: 897147
+
+Thread: 6    Time: 360 Sec         Total Reads: 149543873    Reads per 30 sec: 1032242
+
+Thread: 7    Time: 360 Sec         Total Reads: 149544385    Reads per 30 sec: 916594
+
+Thread: 8    Time: 360 Sec         Total Reads: 149544877    Reads per 30 sec: 911972
+
+Thread: 9    Time: 360 Sec         Total Reads: 149545160    Reads per 30 sec: 891819
+
+Thread: 5    Time: 360 Sec         Total Reads: 149545451    Reads per 30 sec: 933241
+
+Thread: 4    Time: 361 Sec         Total Reads: 150016402    Reads per 30 sec: 930501
+
+Thread: 2    Time: 390 Sec         Total Reads: 160127221    Reads per 30 sec: 871779
+
+Thread: 1    Time: 390 Sec         Total Reads: 160127479    Reads per 30 sec: 1145049
+
+Thread: 0    Time: 390 Sec         Total Reads: 160127927    Reads per 30 sec: 992710
+
+Thread: 3    Time: 390 Sec         Total Reads: 160128401    Reads per 30 sec: 1138716
+
+Thread: 6    Time: 390 Sec         Total Reads: 160128689    Reads per 30 sec: 865845
+
+Thread: 7    Time: 390 Sec         Total Reads: 160128940    Reads per 30 sec: 1147838
+
+Thread: 8    Time: 390 Sec         Total Reads: 160129399    Reads per 30 sec: 1147106
+
+Thread: 9    Time: 390 Sec         Total Reads: 160129666    Reads per 30 sec: 1167935
+
+Thread: 5    Time: 390 Sec         Total Reads: 160129884    Reads per 30 sec: 1132555
+
+Thread: 4    Time: 390 Sec         Total Reads: 160130406    Reads per 30 sec: 1097400
+
+Thread: 2    Time: 420 Sec         Total Reads: 169962051    Reads per 30 sec: 1010770
+
+Thread: 1    Time: 420 Sec         Total Reads: 169962358    Reads per 30 sec: 946279
+
+Thread: 0    Time: 420 Sec         Total Reads: 169962845    Reads per 30 sec: 893796
+
+Thread: 3    Time: 420 Sec         Total Reads: 169963368    Reads per 30 sec: 1013310
+
+Thread: 6    Time: 420 Sec         Total Reads: 169963670    Reads per 30 sec: 1004553
+
+Thread: 7    Time: 420 Sec         Total Reads: 169964030    Reads per 30 sec: 1027331
+
+Thread: 8    Time: 420 Sec         Total Reads: 169964501    Reads per 30 sec: 1019110
+
+Thread: 9    Time: 420 Sec         Total Reads: 169964821    Reads per 30 sec: 987829
+
+Thread: 5    Time: 420 Sec         Total Reads: 169965065    Reads per 30 sec: 1019853
+
+Thread: 4    Time: 420 Sec         Total Reads: 169965650    Reads per 30 sec: 1023129
+
+Thread 5
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split09.fastq-----
+Total Reads: 173244363
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 104 seconds.
+Window elapsed time: 125 seconds.
+Write elapsed time: 28 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split09.fastq
+Thread 3
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split00.fastq-----
+Total Reads: 175292790
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 106 seconds.
+Window elapsed time: 128 seconds.
+Write elapsed time: 22 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split00.fastq
+Thread 7
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split01.fastq-----
+Total Reads: 175720273
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 106 seconds.
+Window elapsed time: 127 seconds.
+Write elapsed time: 25 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split01.fastq
+Thread 8
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split08.fastq-----
+Total Reads: 176158659
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 106 seconds.
+Window elapsed time: 128 seconds.
+Write elapsed time: 27 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split08.fastq
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split04.fastq-----
+Total Reads: 176466595
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 106 seconds.
+Window elapsed time: 131 seconds.
+Write elapsed time: 24 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split04.fastq
+Thread 9
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split07.fastq-----
+Total Reads: 177440637
+Total read elapsed time: 5 seconds.
+Boyer elapsed time: 106 seconds.
+Window elapsed time: 128 seconds.
+Write elapsed time: 29 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split07.fastq
+Thread 4
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split03.fastq-----
+Total Reads: 177713577
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 106 seconds.
+Window elapsed time: 130 seconds.
+Write elapsed time: 32 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split03.fastq
+Thread: 2    Time: 450 Sec         Total Reads: 177897829    Reads per 30 sec: 1056053
+
+Thread: 0    Time: 450 Sec         Total Reads: 177898160    Reads per 30 sec: 953501
+
+Thread: 6    Time: 450 Sec         Total Reads: 177898477    Reads per 30 sec: 1071886
+
+Thread 6
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split02.fastq-----
+Total Reads: 179754327
+Total read elapsed time: 5 seconds.
+Boyer elapsed time: 111 seconds.
+Window elapsed time: 134 seconds.
+Write elapsed time: 29 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split02.fastq
+Thread 2
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split05.fastq-----
+Total Reads: 180185024
+Total read elapsed time: 5 seconds.
+Boyer elapsed time: 113 seconds.
+Window elapsed time: 133 seconds.
+Write elapsed time: 28 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split05.fastq
+Thread: 0    Time: 480 Sec         Total Reads: 180746565    Reads per 30 sec: 1374815
+
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/tTest/split06.fastq-----
+Total Reads: 182071563
+Total read elapsed time: 4 seconds.
+Boyer elapsed time: 142 seconds.
+Window elapsed time: 129 seconds.
+Write elapsed time: 27 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/tTest/split06.fastq
+Trim elapsed time: 513 seconds.
+Success! Combining Temp Files
+Combining 
+elapsed time: 759 seconds.
+-----DONE-----
+-----Summery-----
+Adapters removed: 3711553
+Read trimmed: 21880162
+Total reads: 182071563
+real	25m22.835s
+user	185m17.665s
+sys	6m49.609s

@@ -1,0 +1,16 @@
+*****SPLITING*****
+/scratch/dmendoza/logs/testFiles/quality.fastq.gz
+pigz: skipping: /scratch/dmendoza/logs/testFiles/quality.fastq.gz does not exist
+Split elapsed time: 0 seconds.
+Attempting parallel trim
+TRIM Startin with thread: 0
+TRIM Startin with thread: 9
+TRIM Startin with thread: 6
+TRIM Startin with thread: 4
+TRIM Startin with thread: 1
+TRIM Startin with thread: 8
+TRIM Startin with thread: 2
+TRIM Startin with thread: 5
+TRIM Startin with thread: 3
+TRIM Startin with thread: 7
+slurmstepd: error: *** JOB 19603137 ON dback-c11-n02 CANCELLED AT 2023-07-07T15:57:13 ***

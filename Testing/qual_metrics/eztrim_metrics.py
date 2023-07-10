@@ -9,7 +9,7 @@ bases = 0
 
 record = []
 quality = []
-with open ("ezTrim.fastq", 'r') as file:
+with open ("ezTrim200M.fastq", 'r') as file:
     for line in file:
         if count == 4:
             if "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" in record[1]:
