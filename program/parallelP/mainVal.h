@@ -8,15 +8,13 @@
 #include <vector>
 #include <zlib.h>
 #include <omp.h>
+#include <cstdio>
 using namespace std;
-void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads){
+void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads, string patternString, int windowSize){
     #pragma omp critical
     {
-    cout << "TRIM Startin with thread: " << omp_get_thread_num() << endl;
+    cout << "Trimming starting with thread: " << omp_get_thread_num() << endl;
     }
-    //bool trimmed = false;
-    //vector<char> temp1;
-    //vector<char> temp2;
     // Needed variables
     Timer inTimer;
     Timer boyerTimer;
@@ -36,7 +34,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     // Variables set by user
     int baseSize = 50; //flex
 
-    string patternString = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA";
+    //string patternString = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA";
     vector<char> pattern(patternString.begin(), patternString.end());
     //vector<char> pattern {'C','G','T','G','T','G','C'}; //flex
     int patternSize = pattern.size();
@@ -47,13 +45,10 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
         cerr << "Error opening file: " << inFile << endl;
         exit(0);
     }
-
     //output will be the trim fastq file
     ofstream outputFile(outFile);
-    //ofstream untrimmedFile("/scratch/dmendoza/logs/testFiles/unTrimmed.fastq");
     //While loop to read all information of read file
     auto start = std::chrono::steady_clock::now();
-
     while (true) {
         // Read file with buffer size
         inTimer.start();
@@ -115,7 +110,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 //window
                 windowTimer.start();
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile);
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize);
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
@@ -129,18 +124,6 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 writeTimer.start();
                 //write the 4 lines to the out file
-                /*if(trimmed){
-                    #pragma omp critical
-                    {
-                    gzwrite(untrimmedFile, &lines[0][0], lines[0].size()); //@
-                    gzwrite(untrimmedFile, temp1.data(), temp1.size()); //ATGC
-                    gzwrite(untrimmedFile, &lines[2][0], lines[0].size()); //+
-                    gzwrite(untrimmedFile, temp2.data(), temp2.size()); //FFF
-                    temp1.clear();
-                    temp2.clear();
-                    trimmed = false;
-                    }
-                }*/
                 for (int i = 0; i < 4; ++i) {
                     outputFile.write(&lines[i][0], lines[i].size());
                     outputFile << "\n";
@@ -170,7 +153,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
             #pragma omp critical
             {
             cout << "Thread: " << omp_get_thread_num() << setw(10);
-            cout << "Time: " << timeElapsed << " Sec" << setw(22);
+            cout << "Time: " << timeElapsed << " Sec" << setw(18);
             cout << "Total Reads: " << totalReads<< setw(22);
             cout << "Reads per 30 sec: " << relativeReads <<"\n" << endl;
             }
@@ -179,6 +162,8 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
         }
     }
     //close files
+    file.close();
+    outputFile.close();
     #pragma omp critical
     {
     cout << "Thread " << omp_get_thread_num() << endl;
@@ -193,7 +178,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     cout << "Write ";
     writeTimer.printElapsedTime();
     cout << "Closed: " << inFile << endl;
+    remove(inFile.c_str());
+    cout << "Deleted: " << inFile << endl;
     }
-    file.close();
-    outputFile.close();
 }

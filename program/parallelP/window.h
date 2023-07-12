@@ -10,7 +10,7 @@ using namespace std;
 
 //takes the avg of the window and returns the cutoff if condition is met
 //returns -1 if no cutoff is needed
-int windowSlide(vector<int> numLine){
+int windowSlide(vector<int> numLine, int windowSize){
     if (numLine.empty()) {
         return -1; // Handle empty vector case
     }
@@ -18,8 +18,6 @@ int windowSlide(vector<int> numLine){
     int i = 0;
     int avg = 0;
     int threshold = 20;
-    //Window set size
-    int windowSize = 5;
     //While loop that occurs until the window reaches the end of the line
     while (i + windowSize <= numLine.size()){
         int last = i + windowSize;
@@ -40,20 +38,17 @@ int windowSlide(vector<int> numLine){
     return -1;
 }
 
-void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile){
+void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile, int windowSize){
     int baseSize = 50;
     for (char c : score) {
         int numericalValue = static_cast<int>(c) - 33;
         numericLine.push_back(numericalValue);
     }
     //Window slide function finds where the cutoff should be if needed 
-    int cutOff = windowSlide(numericLine);
+    int cutOff = windowSlide(numericLine, windowSize);
     // if the cut off is not -1 it holds the threshold index to cutoff
     if (cutOff != -1 && cutOff >= baseSize){
         // erase the ASCII and Sequence line at the cutoff
-        /*trimmed = true;
-        temp1.insert(temp1.end(), score.begin(), score.end());
-        temp2.insert(temp2.end(), line.begin(), line.end());*/
         score.erase(score.begin() + cutOff, score.end());
         line.erase(line.begin() + cutOff, line.end());
         numTrimmed++;
@@ -62,7 +57,7 @@ void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLi
     {
         #pragma omp critical
         {
-        gzWriteStringToGzFile(logFile, "***WARNING*****\nNot trimmed: Below min cut off");
+        gzWriteStringToGzFile(logFile, "***WARNING*****\nNot trimmed: Below min cut off\n");
         }
     }
     

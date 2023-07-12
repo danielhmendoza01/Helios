@@ -7,5 +7,10 @@
 #SBATCH --mem=8gb
 #SBATCH --time=02:00:00
 #SBATCH --output=ezTrim_%j.log
-
-time ./main
+readFile="/scratch/dmendoza/logs/testFiles/8276-200M.fastq.gz"
+pattern="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+tempPath="/scratch/dmendoza/logs/files/fastqFiles/temp/"
+outputPath="/scratch/dmendoza/logs/files/fastqFiles/"
+outFileName=""
+windowSize=5
+time ./main -i $readFile -p $pattern -t $tempPath -h $outputPath -w $windowSize

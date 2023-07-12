@@ -106,7 +106,6 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, int&
     {
         for (int i = positions.size()-1; i >= 0; i--)
         {
-            /***********/
             vector<char> subLine(line.begin() + positions[i], line.begin() + positions[i] + patternSize);
             for (int j = 0; j < pattern.size(); j++) {
                 if (pattern[j] != subLine[j]) {                    
@@ -114,7 +113,6 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, int&
                     exit(0);
                 }
             }
-            /***********/
             //how to erase
             line.erase(line.begin() + positions[i], line.begin() + positions[i] + patternSize);
             score.erase(score.begin() + positions[i], score.begin() + positions[i] + patternSize);
