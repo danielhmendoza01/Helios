@@ -1,0 +1,630 @@
+Input file: /scratch/dmendoza/logs/testFiles/8276.fastq.gz
+Temp path: /scratch/dmendoza/logs/files/fastqFiles/temp/
+Output path: /scratch/dmendoza/logs/files/fastqFiles/
+-----SPLITING-----
+/scratch/dmendoza/logs/testFiles/8276.fastq.gz
+Split elapsed time: 247 seconds.
+Attempting parallel trim
+Trimming starting with thread: 5
+Trimming starting with thread: 6
+Trimming starting with thread: 7
+Trimming starting with thread: 2
+Trimming starting with thread: 0
+Trimming starting with thread: 1
+Trimming starting with thread: 4
+Trimming starting with thread: 9
+Trimming starting with thread: 3
+Trimming starting with thread: 8
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split41.fastq-----
+Total Reads: 475442
+Total read elapsed time: 0 seconds.
+Adapter removal elapsed time: 0 seconds.
+Quality trimming elapsed time: 0 seconds.
+File writing elapsed time: 0 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split41.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split41.fastq
+Trimming starting with thread: 0
+Thread: 5    Time: 30 Sec     Total Reads: 14365850    Reads per 30 sec: 1484097
+
+Thread: 2    Time: 30 Sec     Total Reads: 14366233    Reads per 30 sec: 1479885
+
+Thread: 6    Time: 30 Sec     Total Reads: 14367160    Reads per 30 sec: 1485407
+
+Thread: 7    Time: 30 Sec     Total Reads: 14367915    Reads per 30 sec: 1486492
+
+Thread: 4    Time: 30 Sec     Total Reads: 14368698    Reads per 30 sec: 1484806
+
+Thread: 1    Time: 30 Sec     Total Reads: 14369386    Reads per 30 sec: 1483224
+
+Thread: 9    Time: 30 Sec     Total Reads: 14370102    Reads per 30 sec: 1483404
+
+Thread: 8    Time: 30 Sec     Total Reads: 14371125    Reads per 30 sec: 1482984
+
+Thread: 3    Time: 30 Sec     Total Reads: 14371652    Reads per 30 sec: 1483892
+
+Thread: 0    Time: 30 Sec     Total Reads: 14851748    Reads per 30 sec: 1392535
+
+Thread: 5    Time: 60 Sec     Total Reads: 28812326    Reads per 30 sec: 1488311
+
+Thread: 2    Time: 60 Sec     Total Reads: 28812945    Reads per 30 sec: 1492902
+
+Thread: 6    Time: 60 Sec     Total Reads: 28814321    Reads per 30 sec: 1489888
+
+Thread: 7    Time: 60 Sec     Total Reads: 28815149    Reads per 30 sec: 1489803
+
+Thread: 4    Time: 60 Sec     Total Reads: 28815967    Reads per 30 sec: 1501153
+
+Thread: 1    Time: 60 Sec     Total Reads: 28816687    Reads per 30 sec: 1487404
+
+Thread: 9    Time: 60 Sec     Total Reads: 28817408    Reads per 30 sec: 1488145
+
+Thread: 8    Time: 60 Sec     Total Reads: 28818486    Reads per 30 sec: 1497272
+
+Thread: 3    Time: 60 Sec     Total Reads: 28819087    Reads per 30 sec: 1496450
+
+Thread: 0    Time: 60 Sec     Total Reads: 29301834    Reads per 30 sec: 1399533
+
+Thread: 5    Time: 90 Sec     Total Reads: 42829375    Reads per 30 sec: 1449218
+
+Thread: 7    Time: 90 Sec     Total Reads: 42829425    Reads per 30 sec: 1446742
+
+Thread: 3    Time: 90 Sec     Total Reads: 42829434    Reads per 30 sec: 1448139
+
+Thread: 6    Time: 90 Sec     Total Reads: 42829449    Reads per 30 sec: 1445011
+
+Thread: 9    Time: 90 Sec     Total Reads: 42829468    Reads per 30 sec: 1447071
+
+Thread: 2    Time: 90 Sec     Total Reads: 42829488    Reads per 30 sec: 1449565
+
+Thread: 4    Time: 90 Sec     Total Reads: 42829505    Reads per 30 sec: 1448436
+
+Thread: 8    Time: 90 Sec     Total Reads: 42829514    Reads per 30 sec: 1447307
+
+Thread: 1    Time: 90 Sec     Total Reads: 42829536    Reads per 30 sec: 1446242
+
+Thread: 0    Time: 90 Sec     Total Reads: 42991480    Reads per 30 sec: 1323062
+
+Thread 4
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split00.fastq-----
+Total Reads: 43483621
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split00.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split00.fastq
+Thread 3
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split13.fastq-----
+Total Reads: 43540339
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split13.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split13.fastq
+Thread 8
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split09.fastq-----
+Total Reads: 43554595
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 23 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split09.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split09.fastq
+Thread 7
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split38.fastq-----
+Total Reads: 43568184
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 24 seconds.
+File writing elapsed time: 4 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split38.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split38.fastq
+Thread 5
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split11.fastq-----
+Total Reads: 43575729
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 24 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split11.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split11.fastq
+Thread 2
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split23.fastq-----
+Total Reads: 43577633
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 22 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split23.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split23.fastq
+Thread 6
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split31.fastq-----
+Total Reads: 43577634
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 26 seconds.
+File writing elapsed time: 5 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split31.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split31.fastq
+Thread 9
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split08.fastq-----
+Total Reads: 43579746
+Total read elapsed time: 3 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 25 seconds.
+File writing elapsed time: 5 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split08.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split08.fastq
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split34.fastq-----
+Total Reads: 43581915
+Total read elapsed time: 3 seconds.
+Adapter removal elapsed time: 26 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split34.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split34.fastq
+Trimming starting with thread: 4
+Trimming starting with thread: 3
+Trimming starting with thread: 8
+Trimming starting with thread: 7
+Trimming starting with thread: 5
+Trimming starting with thread: 2
+Trimming starting with thread: 6
+Trimming starting with thread: 9
+Trimming starting with thread: 1
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split06.fastq-----
+Total Reads: 45435781
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 28 seconds.
+Quality trimming elapsed time: 27 seconds.
+File writing elapsed time: 6 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split06.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split06.fastq
+Trimming starting with thread: 0
+Thread: 4    Time: 30 Sec     Total Reads: 58945269    Reads per 30 sec: 1595345
+
+Thread: 3    Time: 30 Sec     Total Reads: 59005411    Reads per 30 sec: 1595311
+
+Thread: 8    Time: 30 Sec     Total Reads: 59015184    Reads per 30 sec: 1595579
+
+Thread: 7    Time: 30 Sec     Total Reads: 59056231    Reads per 30 sec: 1599951
+
+Thread: 5    Time: 30 Sec     Total Reads: 59090485    Reads per 30 sec: 1596555
+
+Thread: 2    Time: 30 Sec     Total Reads: 59102612    Reads per 30 sec: 1600639
+
+Thread: 6    Time: 30 Sec     Total Reads: 59105558    Reads per 30 sec: 1601645
+
+Thread: 9    Time: 30 Sec     Total Reads: 59121875    Reads per 30 sec: 1607315
+
+Thread: 1    Time: 30 Sec     Total Reads: 59135126    Reads per 30 sec: 1608939
+
+Thread: 0    Time: 30 Sec     Total Reads: 61395760    Reads per 30 sec: 1415144
+
+Thread: 3    Time: 60 Sec     Total Reads: 73224791    Reads per 30 sec: 1470180
+
+Thread: 8    Time: 60 Sec     Total Reads: 73227221    Reads per 30 sec: 1470458
+
+Thread: 4    Time: 60 Sec     Total Reads: 73227225    Reads per 30 sec: 1475226
+
+Thread: 7    Time: 60 Sec     Total Reads: 73265926    Reads per 30 sec: 1474990
+
+Thread: 5    Time: 60 Sec     Total Reads: 73315588    Reads per 30 sec: 1472979
+
+Thread: 2    Time: 60 Sec     Total Reads: 73327905    Reads per 30 sec: 1468705
+
+Thread: 6    Time: 60 Sec     Total Reads: 73331350    Reads per 30 sec: 1465991
+
+Thread: 9    Time: 60 Sec     Total Reads: 73362728    Reads per 30 sec: 1468749
+
+Thread: 1    Time: 60 Sec     Total Reads: 73376671    Reads per 30 sec: 1470926
+
+Thread: 0    Time: 60 Sec     Total Reads: 76417361    Reads per 30 sec: 1425722
+
+Thread 7
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split21.fastq-----
+Total Reads: 86985081
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split21.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split21.fastq
+Thread 8
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split25.fastq-----
+Total Reads: 87049588
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split25.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split25.fastq
+Thread 4
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split35.fastq-----
+Total Reads: 87095562
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split35.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split35.fastq
+Thread 3
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split40.fastq-----
+Total Reads: 87097697
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split40.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split40.fastq
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split39.fastq-----
+Total Reads: 87117615
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split39.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split39.fastq
+Thread 5
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split16.fastq-----
+Total Reads: 87159914
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split16.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split16.fastq
+Thread 6
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split19.fastq-----
+Total Reads: 87165419
+Total read elapsed time: 4 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split19.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split19.fastq
+Thread 9
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split07.fastq-----
+Total Reads: 87167577
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split07.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split07.fastq
+Thread 2
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split24.fastq-----
+Total Reads: 87169678
+Total read elapsed time: 3 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 6 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split24.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split24.fastq
+Trimming starting with thread: 7
+Trimming starting with thread: 8
+Trimming starting with thread: 4
+Trimming starting with thread: 3
+Trimming starting with thread: 1
+Trimming starting with thread: 5
+Trimming starting with thread: 6
+Trimming starting with thread: 9
+Trimming starting with thread: 2
+Thread: 0    Time: 90 Sec     Total Reads: 89784998    Reads per 30 sec: 1442506
+
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split30.fastq-----
+Total Reads: 92123507
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 28 seconds.
+Quality trimming elapsed time: 23 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split30.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split30.fastq
+Trimming starting with thread: 0
+Thread: 7    Time: 30 Sec     Total Reads: 102973233    Reads per 30 sec: 1650266
+
+Thread: 8    Time: 30 Sec     Total Reads: 103043817    Reads per 30 sec: 1654342
+
+Thread: 4    Time: 30 Sec     Total Reads: 103105824    Reads per 30 sec: 1660183
+
+Thread: 3    Time: 30 Sec     Total Reads: 103137721    Reads per 30 sec: 1659084
+
+Thread: 1    Time: 30 Sec     Total Reads: 103209643    Reads per 30 sec: 1658923
+
+Thread: 5    Time: 30 Sec     Total Reads: 103385882    Reads per 30 sec: 1666731
+
+Thread: 9    Time: 30 Sec     Total Reads: 103400417    Reads per 30 sec: 1680860
+
+Thread: 6    Time: 30 Sec     Total Reads: 103412793    Reads per 30 sec: 1665013
+
+Thread: 2    Time: 30 Sec     Total Reads: 103435897    Reads per 30 sec: 1671155
+
+Thread: 0    Time: 30 Sec     Total Reads: 107578723    Reads per 30 sec: 1357603
+
+Thread: 7    Time: 60 Sec     Total Reads: 116592667    Reads per 30 sec: 1407027
+
+Thread: 8    Time: 60 Sec     Total Reads: 116642296    Reads per 30 sec: 1407441
+
+Thread: 4    Time: 60 Sec     Total Reads: 116704084    Reads per 30 sec: 1411301
+
+Thread: 3    Time: 60 Sec     Total Reads: 116735355    Reads per 30 sec: 1408841
+
+Thread: 1    Time: 60 Sec     Total Reads: 116801572    Reads per 30 sec: 1405929
+
+Thread: 5    Time: 60 Sec     Total Reads: 116969151    Reads per 30 sec: 1394705
+
+Thread: 9    Time: 60 Sec     Total Reads: 116982604    Reads per 30 sec: 1403045
+
+Thread: 6    Time: 60 Sec     Total Reads: 116994538    Reads per 30 sec: 1405560
+
+Thread: 2    Time: 60 Sec     Total Reads: 117016788    Reads per 30 sec: 1395567
+
+Thread: 0    Time: 60 Sec     Total Reads: 122303529    Reads per 30 sec: 1403356
+
+Thread 4
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split28.fastq-----
+Total Reads: 130559278
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split28.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split28.fastq
+Thread 7
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split22.fastq-----
+Total Reads: 130570793
+Total read elapsed time: 5 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 6 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split22.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split22.fastq
+Thread 8
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split02.fastq-----
+Total Reads: 130644703
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split02.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split02.fastq
+Thread 9
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split18.fastq-----
+Total Reads: 130646729
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 10 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split18.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split18.fastq
+Thread 3
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split12.fastq-----
+Total Reads: 130668454
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split12.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split12.fastq
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split10.fastq-----
+Total Reads: 130705338
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split10.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split10.fastq
+Thread 6
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split36.fastq-----
+Total Reads: 130738928
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split36.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split36.fastq
+Thread 2
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split26.fastq-----
+Total Reads: 130752191
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 20 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split26.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split26.fastq
+Thread 5
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split29.fastq-----
+Total Reads: 130753871
+Total read elapsed time: 3 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 19 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split29.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split29.fastq
+Trimming starting with thread: 4
+Trimming starting with thread: 7
+Trimming starting with thread: 8
+Trimming starting with thread: 9
+Trimming starting with thread: 3
+Trimming starting with thread: 1
+Trimming starting with thread: 6
+Trimming starting with thread: 2
+Trimming starting with thread: 5
+Thread: 0    Time: 90 Sec     Total Reads: 136292848    Reads per 30 sec: 1511707
+
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split14.fastq-----
+Total Reads: 138756887
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 28 seconds.
+Quality trimming elapsed time: 23 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split14.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split14.fastq
+Trimming starting with thread: 0
+Thread: 4    Time: 30 Sec     Total Reads: 146058177    Reads per 30 sec: 1589751
+
+Thread: 7    Time: 30 Sec     Total Reads: 146071541    Reads per 30 sec: 1582815
+
+Thread: 8    Time: 30 Sec     Total Reads: 146104893    Reads per 30 sec: 1595415
+
+Thread: 9    Time: 30 Sec     Total Reads: 146146384    Reads per 30 sec: 1601593
+
+Thread: 3    Time: 30 Sec     Total Reads: 146167227    Reads per 30 sec: 1595277
+
+Thread: 1    Time: 30 Sec     Total Reads: 146224113    Reads per 30 sec: 1599188
+
+Thread: 6    Time: 30 Sec     Total Reads: 146268031    Reads per 30 sec: 1601382
+
+Thread: 2    Time: 30 Sec     Total Reads: 146338992    Reads per 30 sec: 1599498
+
+Thread: 5    Time: 30 Sec     Total Reads: 146361706    Reads per 30 sec: 1600416
+
+Thread: 0    Time: 30 Sec     Total Reads: 153349618    Reads per 30 sec: 1304019
+
+Thread: 4    Time: 60 Sec     Total Reads: 160210927    Reads per 30 sec: 1458576
+
+Thread: 7    Time: 60 Sec     Total Reads: 160239273    Reads per 30 sec: 1474606
+
+Thread: 8    Time: 60 Sec     Total Reads: 160284891    Reads per 30 sec: 1460114
+
+Thread: 9    Time: 60 Sec     Total Reads: 160349442    Reads per 30 sec: 1472734
+
+Thread: 3    Time: 60 Sec     Total Reads: 160384097    Reads per 30 sec: 1466983
+
+Thread: 1    Time: 60 Sec     Total Reads: 160488569    Reads per 30 sec: 1469174
+
+Thread: 6    Time: 60 Sec     Total Reads: 160563078    Reads per 30 sec: 1476453
+
+Thread: 2    Time: 60 Sec     Total Reads: 160667028    Reads per 30 sec: 1481270
+
+Thread: 5    Time: 60 Sec     Total Reads: 160703489    Reads per 30 sec: 1484254
+
+Thread: 0    Time: 60 Sec     Total Reads: 167823660    Reads per 30 sec: 1419864
+
+Thread 9
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split27.fastq-----
+Total Reads: 174170023
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split27.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split27.fastq
+Thread 7
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split20.fastq-----
+Total Reads: 174230573
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 10 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split20.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split20.fastq
+Thread 4
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split32.fastq-----
+Total Reads: 174290677
+Total read elapsed time: 3 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split32.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split32.fastq
+Thread 3
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split37.fastq-----
+Total Reads: 174294897
+Total read elapsed time: 3 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 21 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split37.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split37.fastq
+Thread 8
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split01.fastq-----
+Total Reads: 174314611
+Total read elapsed time: 2 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 22 seconds.
+File writing elapsed time: 8 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split01.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split01.fastq
+Thread 6
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split03.fastq-----
+Total Reads: 174337461
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 22 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split03.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split03.fastq
+Thread 2
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split15.fastq-----
+Total Reads: 174360208
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 22 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split15.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split15.fastq
+Thread 5
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split17.fastq-----
+Total Reads: 174366752
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 22 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split17.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split17.fastq
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split33.fastq-----
+Total Reads: 174368962
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 25 seconds.
+Quality trimming elapsed time: 22 seconds.
+File writing elapsed time: 9 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split33.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split33.fastq
+Trimming starting with thread: 1
+Thread: 0    Time: 90 Sec     Total Reads: 176255863    Reads per 30 sec: 1652702
+
+Thread 0
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split04.fastq-----
+Total Reads: 176509688
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 27 seconds.
+Quality trimming elapsed time: 23 seconds.
+File writing elapsed time: 7 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split04.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split04.fastq
+Thread: 1    Time: 30 Sec     Total Reads: 177421708    Reads per 30 sec: 1931991
+
+Thread: 1    Time: 60 Sec     Total Reads: 179395123    Reads per 30 sec: 1973415
+
+Thread 1
+-----Ending File: /scratch/dmendoza/logs/files/fastqFiles/temp/split05.fastq-----
+Total Reads: 179989717
+Total read elapsed time: 1 seconds.
+Adapter removal elapsed time: 23 seconds.
+Quality trimming elapsed time: 14 seconds.
+File writing elapsed time: 2 seconds.
+Closed: /scratch/dmendoza/logs/files/fastqFiles/temp/split05.fastq
+Deleted: /scratch/dmendoza/logs/files/fastqFiles/temp/split05.fastq
+Trim elapsed time: 441 seconds.
+Success! Combining Temp Files
+/scratch/dmendoza/logs/files/fastqFiles/combined.fastq.gz
+Combining elapsed time: 778 seconds.
+-------DONE-------
+------Summery-----
+Adapters removed: 3710686
+Read trimmed: 179126802
+Total reads: 179989717
+
+real	24m29.830s
+user	180m36.958s
+sys	5m20.320s

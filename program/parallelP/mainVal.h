@@ -10,7 +10,7 @@
 #include <omp.h>
 #include <cstdio>
 using namespace std;
-void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads, string patternString, int windowSize, int baseSize, int threshold){
+void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads, string patternString, int windowSize, int baseSize, int threshold, bool reverseQTrim){
     #pragma omp critical
     {
     cout << "Trimming starting with thread: " << omp_get_thread_num() << endl;
@@ -104,7 +104,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 //window
                 windowTimer.start();
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize, baseSize, threshold);
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize, baseSize, threshold, reverseQTrim);
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;

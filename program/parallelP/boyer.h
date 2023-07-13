@@ -82,7 +82,11 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, int&
 
     preprocess_strong_suffix(pattern, patternSize, shift);
     badCharHeuristic(pattern, patternSize, badchar);
-
+    for(int i=0; i< shift.size(); i++){
+        cout << shift[i] << ",";
+    }
+    cout << endl;
+    exit(0);
     vector<int> positions;
     int shiftIndex = 0;
 

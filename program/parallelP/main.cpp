@@ -29,10 +29,11 @@ int main(int argc, char* argv[]){
     int windowSize = 4;
     int baseSize = 50;
     int threshold = 20;
+    bool reverseQTrim = false;
 
 
     int opt;
-    while ((opt = getopt(argc, argv, "i:t:o:p:h:w:b:r")) != -1) {
+    while ((opt = getopt(argc, argv, "i:t:o:p:h:w:b:r:v")) != -1) {
         switch (opt) {
             case 'i':
                 readFile = optarg;
@@ -58,6 +59,8 @@ int main(int argc, char* argv[]){
             case 'r':
                 threshold = stoi(optarg);
                 break;
+            case 'v':
+                reverseQTrim = true;
             default:
                 std::cerr << "Usage: " << argv[0] << " -i input_file [-t temp_path] [-h output_path]" << std::endl;
                 return 1;
@@ -117,7 +120,7 @@ int main(int argc, char* argv[]){
     trimTimer.start();
     #pragma omp parallel for
     for(int i =0; i < fastqFiles.size(); i++){
-        trim(fastqFiles[i], outFiles[i], logFile, numTrimmed, adaptRemov, totalReads, pattern, windowSize, baseSize, threshold);
+        trim(fastqFiles[i], outFiles[i], logFile, numTrimmed, adaptRemov, totalReads, pattern, windowSize, baseSize, threshold, reverseQTrim);
     }
     trimTimer.stop();
     cout << "Trim ";

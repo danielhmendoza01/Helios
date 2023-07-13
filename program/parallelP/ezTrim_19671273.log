@@ -1,0 +1,103 @@
+Input file: /scratch/dmendoza/logs/testFiles/8276.fastq.gz
+Temp path: /scratch/dmendoza/logs/files/fastqFiles/temp/
+Output path: /scratch/dmendoza/logs/files/fastqFiles/
+-----SPLITING-----
+/scratch/dmendoza/logs/testFiles/8276.fastq.gz
+Split elapsed time: 245 seconds.
+Attempting parallel trim
+Trimming starting with thread: 0
+Trimming starting with thread: 4
+Trimming starting with thread: 3
+Trimming starting with thread: 2
+Trimming starting with thread: 7
+Trimming starting with thread: 6
+Trimming starting with thread: 9
+Trimming starting with thread: 1
+Trimming starting with thread: 8
+Trimming starting with thread: 5
+Thread: 3    Time: 30 Sec     Total Reads: 12850480    Reads per 30 sec: 1313122
+
+Thread: 2    Time: 30 Sec     Total Reads: 12854477    Reads per 30 sec: 1335015
+
+Thread: 4    Time: 30 Sec     Total Reads: 12854478    Reads per 30 sec: 1305507
+
+Thread: 0    Time: 30 Sec     Total Reads: 12854480    Reads per 30 sec: 1316297
+
+Thread: 9    Time: 30 Sec     Total Reads: 12854482    Reads per 30 sec: 1302636
+
+Thread: 1    Time: 30 Sec     Total Reads: 12854482    Reads per 30 sec: 1320764
+
+Thread: 6    Time: 30 Sec     Total Reads: 12854486    Reads per 30 sec: 1271614
+
+Thread: 8    Time: 30 Sec     Total Reads: 12854743    Reads per 30 sec: 1329389
+
+Thread: 7    Time: 30 Sec     Total Reads: 12857119    Reads per 30 sec: 1303522
+
+Thread: 5    Time: 30 Sec     Total Reads: 12859548    Reads per 30 sec: 1330948
+
+Thread: 4    Time: 60 Sec     Total Reads: 23647384    Reads per 30 sec: 1114356
+
+Thread: 0    Time: 60 Sec     Total Reads: 23648094    Reads per 30 sec: 1170085
+
+Thread: 6    Time: 60 Sec     Total Reads: 23649156    Reads per 30 sec: 1049426
+
+Thread: 7    Time: 60 Sec     Total Reads: 23649961    Reads per 30 sec: 1113129
+
+Thread: 2    Time: 60 Sec     Total Reads: 23650750    Reads per 30 sec: 1081073
+
+Thread: 3    Time: 60 Sec     Total Reads: 23651441    Reads per 30 sec: 1110123
+
+Thread: 1    Time: 60 Sec     Total Reads: 23651463    Reads per 30 sec: 1101925
+
+Thread: 9    Time: 60 Sec     Total Reads: 23652292    Reads per 30 sec: 1114152
+
+Thread: 8    Time: 60 Sec     Total Reads: 23653287    Reads per 30 sec: 1081037
+
+Thread: 5    Time: 60 Sec     Total Reads: 23658691    Reads per 30 sec: 1076290
+
+Thread: 3    Time: 90 Sec     Total Reads: 34292925    Reads per 30 sec: 1080578
+
+Thread: 0    Time: 90 Sec     Total Reads: 34294088    Reads per 30 sec: 1229301
+
+Thread: 6    Time: 90 Sec     Total Reads: 34295097    Reads per 30 sec: 1073690
+
+Thread: 7    Time: 90 Sec     Total Reads: 34295906    Reads per 30 sec: 1047129
+
+Thread: 2    Time: 90 Sec     Total Reads: 34296713    Reads per 30 sec: 1068800
+
+Thread: 1    Time: 90 Sec     Total Reads: 34297468    Reads per 30 sec: 1075765
+
+Thread: 9    Time: 90 Sec     Total Reads: 34298249    Reads per 30 sec: 1073424
+
+Thread: 8    Time: 90 Sec     Total Reads: 34299258    Reads per 30 sec: 1067537
+
+Thread: 4    Time: 90 Sec     Total Reads: 34300007    Reads per 30 sec: 1047430
+
+Thread: 5    Time: 90 Sec     Total Reads: 34304119    Reads per 30 sec: 1093368
+
+Thread: 3    Time: 120 Sec     Total Reads: 44464752    Reads per 30 sec: 1039897
+
+Thread: 0    Time: 120 Sec     Total Reads: 44465172    Reads per 30 sec: 1138761
+
+Thread: 4    Time: 120 Sec     Total Reads: 44465751    Reads per 30 sec: 1048672
+
+Thread: 6    Time: 120 Sec     Total Reads: 44465878    Reads per 30 sec: 980725
+
+Thread: 7    Time: 120 Sec     Total Reads: 44466756    Reads per 30 sec: 1029125
+
+Thread: 2    Time: 120 Sec     Total Reads: 44467180    Reads per 30 sec: 1001594
+
+Thread: 1    Time: 120 Sec     Total Reads: 44467619    Reads per 30 sec: 1058330
+
+Thread: 9    Time: 120 Sec     Total Reads: 44468216    Reads per 30 sec: 1032066
+
+Thread: 8    Time: 120 Sec     Total Reads: 44468940    Reads per 30 sec: 1033604
+
+Thread: 5    Time: 120 Sec     Total Reads: 44472015    Reads per 30 sec: 998873
+
+/var/spool/slurm/job19671273/slurm_script: line 16:  7280 Killed                  ./main -i $readFile -p $pattern -t $tempPath -h $outputPath -w $windowSize
+
+real	6m35.683s
+user	19m4.892s
+sys	2m51.029s
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=19671273.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
