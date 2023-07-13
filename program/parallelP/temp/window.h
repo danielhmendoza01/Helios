@@ -15,29 +15,27 @@ int windowSlide(vector<int> numLine, int windowSize, int threshold){
         return -1; // Handle empty vector case
     }
     
-    int i = numLine.size() - windowSize; // start from the right
+    int i = 0;
     int avg = 0;
-    //While loop that occurs until the window reaches the beginning of the line
-    while (i >= 0){
-        int first = i;
+    //While loop that occurs until the window reaches the end of the line
+    while (i + windowSize <= numLine.size()){
         int last = i + windowSize;
         //For loop that sums all the numbers within the window
-        for (int index = first; index < last; index++){
+        for (int index = i; index < last; index++){
             avg += numLine[index];
         }
-        //Get the average by dividing by the window size
+        //Get the average be deviding by the window size
         avg = avg / windowSize;
-        //Check if the average is greater than the threshold
-        if (avg > threshold){
-            return i + windowSize; // return the right bound of the window
+        //Check if the avgerage is less than the threshold
+        if (avg < threshold){
+            return i;
         }
         //next window and reset avg back to 0
-        i--;
+        i++;
         avg = 0;
     }
     return -1;
 }
-
 
 void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile, int windowSize, int baseSize, int threshold){
     for (char c : score) {

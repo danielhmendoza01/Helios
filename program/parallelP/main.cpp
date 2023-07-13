@@ -9,6 +9,7 @@
 #include <omp.h>
 #include <dirent.h>
 #include <unistd.h>
+#include <regex>
 using namespace std;
 
 int main(int argc, char* argv[]){
@@ -26,10 +27,12 @@ int main(int argc, char* argv[]){
     string outputPath = "./"; // "./"
     string outFileName = "combined.fastq.gz";
     int windowSize = 4;
+    int baseSize = 50;
+    int threshold = 20;
 
 
     int opt;
-    while ((opt = getopt(argc, argv, "i:t:o:p:h:w:")) != -1) {
+    while ((opt = getopt(argc, argv, "i:t:o:p:h:w:b:r")) != -1) {
         switch (opt) {
             case 'i':
                 readFile = optarg;
@@ -48,6 +51,12 @@ int main(int argc, char* argv[]){
                 break;
             case 'w':
                 windowSize = stoi(optarg);
+                break;
+            case 'b':
+                baseSize = stoi(optarg);
+                break;
+            case 'r':
+                threshold = stoi(optarg);
                 break;
             default:
                 std::cerr << "Usage: " << argv[0] << " -i input_file [-t temp_path] [-h output_path]" << std::endl;
@@ -74,8 +83,6 @@ int main(int argc, char* argv[]){
     std::cout << "Temp path: " << tempPath << std::endl;
     std::cout << "Output path: " << outputPath << std::endl;
 
-
-
     //variables trackes across all files
     int numTrimmed = 0;
     int adaptRemov = 0;
@@ -90,7 +97,6 @@ int main(int argc, char* argv[]){
     splitTimer.printElapsedTime();
 
     // Open the directory
-    int fileNum = 0;
     DIR *dir;
     struct dirent *ent;
     if ((dir = opendir(tempPath.c_str())) != NULL) {
@@ -98,8 +104,8 @@ int main(int argc, char* argv[]){
             std::string filename = ent->d_name;
             if (filename.length() > 6 && filename.substr(filename.length() - 6) == ".fastq") {
                 fastqFiles.push_back(tempPath + filename);
-                outFiles.push_back(tempPath + "postTrim" + to_string(fileNum) + ".fastq");
-                fileNum++;
+                
+                outFiles.push_back(tempPath + "post" + filename[5] +filename[6] + ".fastq");
             }
         }
         closedir(dir);
@@ -111,7 +117,7 @@ int main(int argc, char* argv[]){
     trimTimer.start();
     #pragma omp parallel for
     for(int i =0; i < fastqFiles.size(); i++){
-        trim(fastqFiles[i], outFiles[i], logFile, numTrimmed, adaptRemov, totalReads, pattern, windowSize);
+        trim(fastqFiles[i], outFiles[i], logFile, numTrimmed, adaptRemov, totalReads, pattern, windowSize, baseSize, threshold);
     }
     trimTimer.stop();
     cout << "Trim ";

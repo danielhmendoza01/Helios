@@ -10,7 +10,7 @@
 #include <omp.h>
 #include <cstdio>
 using namespace std;
-void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads, string patternString, int windowSize){
+void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& adaptRemov, long& totalReads, string patternString, int windowSize, int baseSize, int threshold){
     #pragma omp critical
     {
     cout << "Trimming starting with thread: " << omp_get_thread_num() << endl;
@@ -21,7 +21,6 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     Timer windowTimer;
     Timer writeTimer;
     unordered_set<std::string> identifierLines;
-    const unsigned long GIGABYTE = 1024 * 1024 * 1024;
     char rawBuffer[1024];
     string buffer;
     vector<char> lines[4];
@@ -34,7 +33,6 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     // Variables set by user
     int baseSize = 50; //flex
 
-    //string patternString = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA";
     vector<char> pattern(patternString.begin(), patternString.end());
     //vector<char> pattern {'C','G','T','G','T','G','C'}; //flex
     int patternSize = pattern.size();
@@ -110,7 +108,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 //window
                 windowTimer.start();
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize);
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize, baseSize, threshold);
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
@@ -171,14 +169,17 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     cout << "Total Reads: " << totalReads << endl;
     cout << "Total read ";
     inTimer.printElapsedTime();
-    cout << "Boyer ";
+    cout << "Adapter removal ";
     boyerTimer.printElapsedTime();
-    cout << "Window ";
+    cout << "Quality trimming ";
     windowTimer.printElapsedTime();
-    cout << "Write ";
+    cout << "File writing ";
     writeTimer.printElapsedTime();
     cout << "Closed: " << inFile << endl;
     remove(inFile.c_str());
     cout << "Deleted: " << inFile << endl;
     }
+    //cout << "Compressing: " << outFile << endl;
+    //string pCompress = "gzip " + outFile;
+    //system(pCompress.c_str());
 }
