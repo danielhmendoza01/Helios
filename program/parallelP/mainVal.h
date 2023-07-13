@@ -30,11 +30,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     int trackTime = 0;
     int trackOccurrence = 30;
     vector<int> cutIndexes;
-    // Variables set by user
-    int baseSize = 50; //flex
-
     vector<char> pattern(patternString.begin(), patternString.end());
-    //vector<char> pattern {'C','G','T','G','T','G','C'}; //flex
     int patternSize = pattern.size();
     
     //File that needes to be read
