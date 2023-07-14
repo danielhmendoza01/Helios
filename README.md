@@ -51,9 +51,9 @@ ezTrim -i <input_file> -p <pattern> [-t <temp_path>] [-o <out_file_name>] [-h <o
 | `-t`        | Current directory  | Path to store temporary files             |
 | `-o`        | Current directory  | Name for the output file                  |
 | `-h`        | Current directory  | Path to store output files                |
-| `-w`        | 4                  | Alternate window size                     |
-| `-b`        | 50                 | Alternate base size                       |
-| `-t`        | 20                 | Alternate trim threshold                  |
+| `-w`        | 4                  | Alternative window size                     |
+| `-b`        | 50                 | Alternative base size                       |
+| `-t`        | 20                 | Alternative trim threshold                  |
 | `-v`        | Forward            | Option for 3 to 5 prime end trimming      |
 
 ---
