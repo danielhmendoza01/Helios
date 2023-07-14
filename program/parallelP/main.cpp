@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){
     int baseSize = 50;
     int threshold = 20;
     bool reverseQTrim = false;
-
+    string errorMessage = " -i input_file -p pattern [-t temp_path] [-o out_file_name] [-h output_path] [-w window_size] [-b base_size] [-t trim_threshold] [-v 3_to_5_prime_trim]";
 
     int opt;
     while ((opt = getopt(argc, argv, "i:t:o:p:h:w:b:r:v")) != -1) {
@@ -62,17 +62,17 @@ int main(int argc, char* argv[]){
             case 'v':
                 reverseQTrim = true;
             default:
-                std::cerr << "Usage: " << argv[0] << " -i input_file [-t temp_path] [-h output_path]" << std::endl;
+                std::cerr << "Usage: " << argv[0] << errorMessage << std::endl;
                 return 1;
         }
     }
 
     if (readFile.empty()) {
-        std::cerr << "Input file not provided. Usage: " << argv[0] << " -i input_file -p pattern [-t temp_path] [-h output_path]" << std::endl;
+        std::cerr << "Input file not provided. Usage: " << argv[0] << errorMessage << std::endl;
         return 1;
     }
     if (pattern.empty()){
-        cerr << "Pattern not provided. Usage: " << argv[0] << " -i input_file -p pattern [-t temp_path] [-h output_path]" << endl;
+        cerr << "Pattern not provided. Usage: " << argv[0] << errorMessage << endl;
         return 1;
     }
 
