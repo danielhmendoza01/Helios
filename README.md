@@ -4,7 +4,7 @@
 
 # ezTrim
 
-**ezTrim** is a high-performance quality trimming tool designed to improve the quality and efficiency of your sequencing data processing.
+**ezTrim** is a parallel quality trimming tool designed to improve the quality and efficiency of your sequencing data processing.
 
 ## 🌟 Features
 
