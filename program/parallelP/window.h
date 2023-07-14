@@ -65,7 +65,7 @@ int windowSlideReverse(vector<int> numLine, int windowSize, int threshold){
 }
 
 
-void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile, int windowSize, int baseSize, int threshold, bool reverseQTrim){
+void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLine, int& numTrimmed, gzFile logFile, int windowSize, int baseSize, int threshold, bool reverseQTrim, vector<char> id){
     for (char c : score) {
         int numericalValue = static_cast<int>(c) - 33;
         numericLine.push_back(numericalValue);
@@ -88,11 +88,10 @@ void eraseCutoff(vector<char>& line, vector<char>& score, vector<int>& numericLi
     }
     if (cutOff < baseSize && cutOff != -1)
     {
+        string idLine(id.begin(), id.end());
         #pragma omp critical
         {
-        gzWriteStringToGzFile(logFile, "***WARNING*****\nNot trimmed: Below min cut off\n");
+        gzWriteStringToGzFile(logFile, "***WARNING*****\n" + idLine + "\nNot trimmed: Below min cut off\n");
         }
     }
-    
-    
 }

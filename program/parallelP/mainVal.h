@@ -104,7 +104,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
 
                 //window
                 windowTimer.start();
-                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize, baseSize, threshold, reverseQTrim);
+                eraseCutoff(lines[1], lines[3], numericLine, numTrimmed, logFile, windowSize, baseSize, threshold, reverseQTrim, lines[0]);
                 if (lines[1].size() < baseSize || lines[3].size() < baseSize)
                 {
                     cout << "********WINDOW UNDER MIN LENGTH ERROR*******\n" << endl;
