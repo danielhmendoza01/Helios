@@ -26,7 +26,7 @@ Ensure that you have the following installed on your system:
 Compile the program using the following command:
 
 ```bash
-g++ -std=c++2a main.cpp -o main -fopenmp -lz
+g++ -std=c++2a main.cpp -o ezTrim -fopenmp -lz
 ```
 
 ## 📖 Usage
