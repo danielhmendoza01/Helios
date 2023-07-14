@@ -86,7 +86,6 @@ void search(vector<char>& line, vector<char>& pattern, vector<char>& score, int&
         cout << shift[i] << ",";
     }
     cout << endl;
-    exit(0);
     vector<int> positions;
     int shiftIndex = 0;
 
