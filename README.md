@@ -1,28 +1,60 @@
-ezTrim
-Quality Trimming Tool
 
-Features
-Quality Trim
-Trim adapters
-Compressed output
 
-Set up
-Compile with:
+---
+
+# ezTrim
+
+**ezTrim** is a high-performance quality trimming tool designed to improve the quality and efficiency of your sequencing data processing.
+
+## 🌟 Features
+
+- Quality Trimming
+- Adapter Trimming
+- Compressed Output
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure that you have the following installed on your system:
+- g++
+- OpenMP
+- zlib
+
+### Installation
+
+Compile the program using the following command:
+
+```bash
 g++ -std=c++2a main.cpp -o main -fopenmp -lz
+```
 
-Using ezTrim
--i input_file -p pattern [-t temp_path] [-o out_file_name] [-h output_path] [-w window_size] [-b base_size] [-t trim_threshold] [-v 3_to_5_prime_trim]
+## 📖 Usage
 
-Required                default                 Explanation
--i input_file           None                    File that needs to be trimmed (file.fastq.gz)
--p pattern              None                    The adapter pattern that needs to be removed
-Optional
--t temp_path            current directory       A directory path can be given to store temporary files
--o out_file_name        current directory       A file name can be given to the output file
--h output_path          current directory       A directory path can be given to store temporary files
--w window_size          4                       An alternate size can be given
--b base_size            50                      An alternate base size can be given
--t trim_threshold       20                      an alternate threshold can be given
--v 3_to_5_prime_trim    forward                 Can do 3 to 5 prime end trimmming
+```bash
+ezTrim -i <input_file> -p <pattern> [-t <temp_path>] [-o <out_file_name>] [-h <output_path>] [-w <window_size>] [-b <base_size>] [-t <trim_threshold>] [-v <3_to_5_prime_trim>]
+```
 
+### Parameters
+
+#### Required
+
+| Parameter   | Default | Description                               |
+|-------------|---------|-------------------------------------------|
+| `-i`        | None    | Input file (e.g., file.fastq.gz)          |
+| `-p`        | None    | Adapter pattern to be removed             |
+
+#### Optional
+
+| Parameter   | Default            | Description                               |
+|-------------|--------------------|-------------------------------------------|
+| `-t`        | Current directory  | Path to store temporary files             |
+| `-o`        | Current directory  | Name for the output file                  |
+| `-h`        | Current directory  | Path to store output files                |
+| `-w`        | 4                  | Alternate window size                     |
+| `-b`        | 50                 | Alternate base size                       |
+| `-t`        | 20                 | Alternate trim threshold                  |
+| `-v`        | Forward            | Option for 3 to 5 prime end trimming      |
+
+---
 
