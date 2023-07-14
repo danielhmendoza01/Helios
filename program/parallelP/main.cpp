@@ -13,25 +13,25 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-    //string readFile = "/scratch/dmendoza/logs/testFiles/8276-200M.fastq.gz";
     vector<string> fastqFiles;
     vector<string> outFiles;
     Timer splitTimer;
     Timer trimTimer;
     Timer combineTimer;
-    gzFile logFile = createGzFile("/scratch/dmendoza/logs/files/logs/logT1.txt.gz"); //This needs to be reworked
+    gzFile logFile = createGzFile("/scratch/dmendoza/logs/files/logs/logT1.txt.gz"); //Works ok
 
     string readFile;
     string pattern;
-    string tempPath = "./"; // "./"
-    string outputPath = "./"; // "./"
+    string tempPath = "./";
+    string outputPath = "./";
     string outFileName = "combined.fastq.gz";
+    //Default Values
     int windowSize = 4;
     int baseSize = 50;
     int threshold = 20;
     bool reverseQTrim = false;
     string errorMessage = " -i input_file -p pattern [-t temp_path] [-o out_file_name] [-h output_path] [-w window_size] [-b base_size] [-t trim_threshold] [-v 3_to_5_prime_trim]";
-
+    //Flags
     int opt;
     while ((opt = getopt(argc, argv, "i:t:o:p:h:w:b:r:v")) != -1) {
         switch (opt) {
@@ -62,13 +62,13 @@ int main(int argc, char* argv[]){
             case 'v':
                 reverseQTrim = true;
             default:
-                std::cerr << "Usage: " << argv[0] << errorMessage << std::endl;
+                cerr << "Usage: " << argv[0] << errorMessage << endl;
                 return 1;
         }
     }
-
+    //Flag error handler
     if (readFile.empty()) {
-        std::cerr << "Input file not provided. Usage: " << argv[0] << errorMessage << std::endl;
+        cerr << "Input file not provided. Usage: " << argv[0] << errorMessage << endl;
         return 1;
     }
     if (pattern.empty()){
@@ -76,15 +76,15 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-    std::ifstream inputFile(readFile);
+    ifstream inputFile(readFile);
     if (!inputFile) {
-        std::cerr << "Failed to open input file: " << readFile << std::endl;
+        cerr << "Failed to open input file: " << readFile << endl;
         return 1;
     }
 
-    std::cout << "Input file: " << readFile << std::endl;
-    std::cout << "Temp path: " << tempPath << std::endl;
-    std::cout << "Output path: " << outputPath << std::endl;
+    cout << "Input file: " << readFile << endl;
+    cout << "Temp path: " << tempPath << endl;
+    cout << "Output path: " << outputPath << endl;
 
     //variables trackes across all files
     int numTrimmed = 0;
@@ -92,7 +92,7 @@ int main(int argc, char* argv[]){
     long totalReads = 0;
     cout <<"-----SPLITING-----"<<endl;
     splitTimer.start();
-    std::string command = "bash split.sh " + readFile + " " + tempPath;
+    string command = "bash split.sh " + readFile + " " + tempPath;
     system(command.c_str());
 
     splitTimer.stop();
@@ -104,7 +104,7 @@ int main(int argc, char* argv[]){
     struct dirent *ent;
     if ((dir = opendir(tempPath.c_str())) != NULL) {
         while ((ent = readdir(dir)) != NULL) {
-            std::string filename = ent->d_name;
+            string filename = ent->d_name;
             if (filename.length() > 6 && filename.substr(filename.length() - 6) == ".fastq") {
                 fastqFiles.push_back(tempPath + filename);
                 
@@ -113,7 +113,7 @@ int main(int argc, char* argv[]){
         }
         closedir(dir);
     } else {
-        std::cerr << "Unable to open directory: " << tempPath << std::endl;
+        cerr << "Unable to open directory: " << tempPath << endl;
     }
     
     cout << "Attempting parallel trim" <<endl;
@@ -127,7 +127,7 @@ int main(int argc, char* argv[]){
     trimTimer.printElapsedTime();
     cout << "Success! Combining Temp Files" <<endl;
     combineTimer.start();
-    std::string command2 = "bash combine.sh " + tempPath + " " + outputPath + " " + outFileName;
+    string command2 = "bash combine.sh " + tempPath + " " + outputPath + " " + outFileName;
     system(command2.c_str());
     combineTimer.stop();
     cout << "Combining ";

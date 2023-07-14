@@ -175,7 +175,4 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     remove(inFile.c_str());
     cout << "Deleted: " << inFile << endl;
     }
-    //cout << "Compressing: " << outFile << endl;
-    //string pCompress = "gzip " + outFile;
-    //system(pCompress.c_str());
 }
