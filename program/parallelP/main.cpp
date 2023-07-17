@@ -1,4 +1,4 @@
-#include "mainVal.h"
+#include "trimmer.h"
 #include <chrono>
 #include <iomanip>
 #include <iostream>

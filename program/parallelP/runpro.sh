@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=8gb
 #SBATCH --time=02:00:00
-#SBATCH --output=ezTrim_%j.log
+#SBATCH --output=/scratch/dmendoza/logs/files/logs/ezTrim_%j.log
 readFile="/scratch/dmendoza/logs/testFiles/8276-200M.fastq.gz"
 pattern="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
 tempPath="/scratch/dmendoza/logs/files/fastqFiles/temp/"
