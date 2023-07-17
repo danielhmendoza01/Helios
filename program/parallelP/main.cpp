@@ -61,6 +61,7 @@ int main(int argc, char* argv[]){
                 break;
             case 'v':
                 reverseQTrim = true;
+                break;
             default:
                 cerr << "Usage: " << argv[0] << errorMessage << endl;
                 return 1;
@@ -108,7 +109,7 @@ int main(int argc, char* argv[]){
             if (filename.length() > 6 && filename.substr(filename.length() - 6) == ".fastq") {
                 fastqFiles.push_back(tempPath + filename);
                 
-                outFiles.push_back(tempPath + "post" + filename[5] +filename[6] + ".fastq");
+                outFiles.push_back(tempPath + "post" + filename[5] +filename[6] + filename[7] + ".fastq");
             }
         }
         closedir(dir);

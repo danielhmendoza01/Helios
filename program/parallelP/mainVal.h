@@ -28,7 +28,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
     int lineIndex = 0;
     int relativeReads = 0;
     int trackTime = 0;
-    int trackOccurrence = 30;
+    int trackOccurrence = 5;
     vector<int> cutIndexes;
     vector<char> pattern(patternString.begin(), patternString.end());
     int patternSize = pattern.size();
@@ -149,7 +149,7 @@ void trim(string inFile, string outFile, gzFile logFile, int& numTrimmed, int& a
             cout << "Thread: " << omp_get_thread_num() << setw(10);
             cout << "Time: " << timeElapsed << " Sec" << setw(18);
             cout << "Total Reads: " << totalReads<< setw(22);
-            cout << "Reads per 30 sec: " << relativeReads <<"\n" << endl;
+            cout << "Reads per 5 sec: " << relativeReads <<"\n" << endl;
             }
             relativeReads = 0;
             trackTime++;

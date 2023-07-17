@@ -13,4 +13,4 @@ tempPath="/scratch/dmendoza/logs/files/fastqFiles/temp/"
 outputPath="/scratch/dmendoza/logs/files/fastqFiles/"
 outFileName=""
 windowSize=5
-time ./main -i $readFile -p $pattern -t $tempPath -h $outputPath -w $windowSize
+time ./ezTrim -i $readFile -p $pattern -t $tempPath -h $outputPath -w $windowSize -v 
