@@ -26,6 +26,7 @@ Ensure that you have the following installed on your system:
 Compile the program using the following command:
 
 ```bash
+cd program/parallelP/
 g++ -std=c++2a main.cpp -o ezTrim -fopenmp -lz
 ```
 
