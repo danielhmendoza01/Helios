@@ -18,13 +18,14 @@ int main(int argc, char* argv[]){
     Timer splitTimer;
     Timer trimTimer;
     Timer combineTimer;
-    gzFile logFile = createGzFile("/scratch/dmendoza/logs/files/logs/logT1.txt.gz"); //Works ok
-
+    
     string readFile;
     string pattern;
     string tempPath = "./";
     string outputPath = "./";
     string outFileName = "combined.fastq.gz";
+    gzFile logFile;
+    
     //Default Values
     int windowSize = 4;
     int baseSize = 50;
@@ -75,6 +76,13 @@ int main(int argc, char* argv[]){
     if (pattern.empty()){
         cerr << "Pattern not provided. Usage: " << argv[0] << errorMessage << endl;
         return 1;
+    }
+    if (outputPath != "./"){
+        string logPath = outputPath + "logT1.txt.gz";
+        logFile = createGzFile(logPath); //Works ok
+    }
+    else{
+        logFile = createGzFile("logT1.txt.gz"); //works ok
     }
 
     ifstream inputFile(readFile);
