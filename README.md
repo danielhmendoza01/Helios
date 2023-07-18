@@ -17,6 +17,7 @@
 ### Prerequisites
 
 Ensure that you have the following installed on your system:
+- pigz
 - g++
 - OpenMP
 - zlib
